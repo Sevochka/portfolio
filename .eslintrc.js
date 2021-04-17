@@ -17,6 +17,8 @@ module.exports = {
     'plugin:import/warnings',
     'plugin:import/typescript',
     'plugin:jsx-a11y/recommended',
+    'prettier',
+    'plugin:prettier/recommended',
   ],
   rules: {
     'no-unused-vars': 'off',
@@ -26,5 +28,5 @@ module.exports = {
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
-  }
-}
+  },
+};
