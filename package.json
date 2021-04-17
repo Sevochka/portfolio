@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "Vsevolod <sevkaplay@gmail.com>",
-  "scripts": {},
+  "scripts": {
+    "start": "webpack serve --config webpack/webpack.config.js --open"
+  },
   "license": "MIT",
   "dependencies": {
     "react": "^17.0.2",
