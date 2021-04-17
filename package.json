@@ -3,8 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "Vsevolod <sevkaplay@gmail.com>",
-  "scripts": {
-
+  "scripts": {},
+  "license": "MIT",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
-  "license": "MIT"
+  "devDependencies": {
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "typescript": "^4.2.4"
+  }
 }
