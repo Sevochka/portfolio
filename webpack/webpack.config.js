@@ -16,7 +16,20 @@ module.exports = {
             loader: 'babel-loader'
           }
         ]
-      }
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      },
+      // webpack 5 имеет собственные loaders для работы с большинством расширений картинок
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource'
+      },
+      {
+        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+        type: 'asset/inline',
+      },
     ]
   },
   output: {
