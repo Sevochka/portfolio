@@ -1,19 +1,26 @@
 import React from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
-import { Grid, Typography } from '@material-ui/core';
+import { Grid, Typography, TypographyProps } from '@material-ui/core';
+import { ProfileLinks } from '../components/ProfileLinks';
+import grey from '@material-ui/core/colors/grey';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    root: {
-      display: 'flex',
-      '& > *': {
-        margin: theme.spacing(1),
-      },
-    },
+    root: {},
     large: {
       width: theme.spacing(20),
       height: theme.spacing(20),
+    },
+    flex: {
+      display: 'flex',
+      '& a': {
+        marginLeft: theme.spacing(1),
+      },
+      '& a:hover': {
+        textDecoration: 'none',
+        color: grey['400'],
+      },
     },
   })
 );
@@ -21,24 +28,37 @@ const useStyles = makeStyles((theme: Theme) =>
 const Profile = () => {
   const classes = useStyles();
 
+  const typographySameProps: TypographyProps = {
+    align: 'left',
+    color: 'initial',
+  };
   return (
-    <Grid container spacing={3} className={classes.root} direction="column">
-      <Grid item xs>
+    <Grid
+      container
+      spacing={2}
+      className={classes.root}
+      direction="column"
+      alignItems="flex-start"
+    >
+      <Grid item>
         <Avatar
           alt="Avatar"
-          src="https://upload.wikimedia.org/wikipedia/commons/4/47/PNG_transparency_demonstration_1.png"
+          src="https://avatars.githubusercontent.com/u/32411350?s=400&u=6570603a9f435bc676ca6a1606d2eb74e6105f68&v=4"
           className={classes.large}
         />
       </Grid>
-      <Grid item xs>
-        <Typography variant="h5" color="primary">
+      <Grid item>
+        <Typography {...typographySameProps} variant="h6">
           Vsevolod Kochnev
         </Typography>
       </Grid>
-      <Grid item xs>
-        <Typography variant="h6" color="secondary">
+      <Grid item>
+        <Typography {...typographySameProps} variant="subtitle2">
           Something stupid here
         </Typography>
+      </Grid>
+      <Grid item>
+        <ProfileLinks flexClasses={classes.flex} />
       </Grid>
     </Grid>
   );
