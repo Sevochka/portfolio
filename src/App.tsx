@@ -8,6 +8,7 @@ import {
   CssBaseline,
   useMediaQuery,
 } from '@material-ui/core';
+import { Projects } from './components/Projects';
 
 type Props = {
   toggleDarkTheme(): void;
@@ -34,11 +35,12 @@ const App: FC<Props> = ({ toggleDarkTheme }) => {
         <Grid container spacing={3} direction={gridDirection}>
           <Grid item xs={6}>
             <Profile />
-          </Grid>
-          <Grid item xs={6}>
             <Button color="primary" onClick={toggleDarkTheme}>
               Toggle theme
             </Button>
+          </Grid>
+          <Grid item xs={6}>
+            <Projects />
           </Grid>
         </Grid>
       </Container>
