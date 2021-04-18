@@ -1,18 +1,17 @@
-import React, { useState } from 'react';
-import {
-  makeStyles,
-  createStyles,
-  Theme,
-  MuiThemeProvider,
-} from '@material-ui/core/styles';
+import React, { FC } from 'react';
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import { Profile } from './components/Profile';
 import {
   Button,
   Container,
-  createMuiTheme,
   CssBaseline,
+  useMediaQuery,
 } from '@material-ui/core';
+
+type Props = {
+  toggleDarkTheme(): void;
+};
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -22,33 +21,17 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const App = () => {
+const App: FC<Props> = ({ toggleDarkTheme }) => {
   const classes = useStyles();
 
-  const [theme, setTheme] = useState({
-    palette: {
-      type: 'light',
-    },
-  });
-
-  // we change the palette type of the theme in state
-  const toggleDarkTheme = () => {
-    const newPaletteType = theme.palette.type === 'light' ? 'dark' : 'light';
-    setTheme({
-      palette: {
-        type: newPaletteType,
-      },
-    });
-  };
-
-  // we generate a MUI-theme from state's theme object
-  const muiTheme: Theme = createMuiTheme(theme as Theme);
+  const matches = useMediaQuery('(min-width:600px)');
+  const gridDirection = matches ? 'row' : 'column';
 
   return (
-    <MuiThemeProvider theme={muiTheme}>
+    <>
       <CssBaseline />
       <Container maxWidth="md" className={classes.container}>
-        <Grid container spacing={3}>
+        <Grid container spacing={3} direction={gridDirection}>
           <Grid item xs={6}>
             <Profile />
           </Grid>
@@ -59,7 +42,7 @@ const App = () => {
           </Grid>
         </Grid>
       </Container>
-    </MuiThemeProvider>
+    </>
   );
 };
 
