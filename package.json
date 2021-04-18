@@ -4,13 +4,15 @@
   "main": "index.js",
   "author": "Vsevolod <sevkaplay@gmail.com>",
   "scripts": {
-    "start": "webpack serve --config webpack/webpack.common.js --mode development --env env=dev",
+    "start": "webpack serve --config webpack/webpack.common.js --mode development --env env=dev --open",
     "build": "webpack --config webpack/webpack.common.js --mode production --env env=prod",
     "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\"",
     "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
   "license": "MIT",
   "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
@@ -60,5 +62,8 @@
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
       "prettier --write"
     ]
+  },
+  "browser": {
+    "[module-name]": false
   }
 }
