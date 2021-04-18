@@ -11,13 +11,17 @@ const ProfileLinks: FC<Props> = ({ flexClasses }) => {
     <Grid container spacing={1} direction="column" alignItems="flex-start">
       <Grid item className={flexClasses}>
         <GitHubIcon fontSize="small" />
-        <Link href="#" color="inherit">
+        <Link
+          href="https://github.com/Sevochka"
+          color="inherit"
+          target="_blank"
+        >
           @sevochka
         </Link>
       </Grid>
       <Grid item className={flexClasses}>
         <TelegramIcon fontSize="small" />
-        <Link href="#" color="inherit">
+        <Link href="https://t.me/Sevka1337" color="inherit" target="_blank">
           @sevka1337
         </Link>
       </Grid>
