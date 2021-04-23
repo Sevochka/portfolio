@@ -33,13 +33,13 @@ const App: FC<Props> = ({ toggleDarkTheme }) => {
       <CssBaseline />
       <Container maxWidth="md" className={classes.container}>
         <Grid container spacing={3} direction={gridDirection}>
-          <Grid item xs={6}>
+          <Grid item xs={4}>
             <Profile />
             <Button color="primary" onClick={toggleDarkTheme}>
               Toggle theme
             </Button>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={8}>
             <Projects />
           </Grid>
         </Grid>
