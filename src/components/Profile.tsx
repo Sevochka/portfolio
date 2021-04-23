@@ -45,6 +45,8 @@ const Profile = () => {
           alt="Avatar"
           src="https://avatars.githubusercontent.com/u/32411350?s=400&u=6570603a9f435bc676ca6a1606d2eb74e6105f68&v=4"
           className={classes.large}
+          draggable="false"
+          onDragStart={(event) => event.preventDefault()}
         />
       </Grid>
       <Grid item>
