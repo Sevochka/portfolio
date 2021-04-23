@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { TitlePart } from './TitlePart';
+import { TitlePart } from '../shared/TitlePart';
 import AppsOutlinedIcon from '@material-ui/icons/AppsOutlined';
 import { ProjectCard } from './ProjectCard';
 import { createStyles, Grid } from '@material-ui/core';

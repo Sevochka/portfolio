@@ -1,14 +1,14 @@
 import React, { FC } from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import { Profile } from './components/Profile';
+import { Profile } from './components/profile/Profile';
 import {
   Button,
   Container,
   CssBaseline,
   useMediaQuery,
 } from '@material-ui/core';
-import { Projects } from './components/Projects';
+import { Projects } from './components/projects/Projects';
 
 type Props = {
   toggleDarkTheme(): void;
