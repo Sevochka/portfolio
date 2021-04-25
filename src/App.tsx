@@ -20,6 +20,10 @@ const useStyles = makeStyles((theme: Theme) =>
     container: {
       marginTop: theme.spacing(3),
     },
+    profileSticky: {
+      position: 'sticky',
+      top: 0 /* required */,
+    },
   })
 );
 
@@ -35,10 +39,12 @@ const App: FC<Props> = ({ toggleDarkTheme }) => {
       <Container maxWidth="md" className={classes.container}>
         <Grid container spacing={3} direction={gridDirection}>
           <Grid item xs={4}>
-            <Profile />
-            <Button color="primary" onClick={toggleDarkTheme}>
-              Toggle theme
-            </Button>
+            <div className={classes.profileSticky}>
+              <Profile />
+              <Button color="primary" onClick={toggleDarkTheme}>
+                Toggle theme
+              </Button>
+            </div>
           </Grid>
           <Grid item xs={8}>
             <Grid container spacing={3} direction="column">
