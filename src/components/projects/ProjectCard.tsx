@@ -11,7 +11,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import { createStyles } from '@material-ui/core';
+import { CardActionArea, createStyles } from '@material-ui/core';
 import { grey } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) =>
@@ -43,24 +43,30 @@ const ProjectCard: FC<Props> = ({ title, description, languages }) => {
 
   return (
     <Card className={classes.root} variant="outlined">
-      <CardContent>
-        <Typography
-          className={classes.title}
-          color="textSecondary"
-          gutterBottom
-        >
-          {title}
-        </Typography>
-        <Typography
-          className={`${classes.description} ${classes.marginTop}`}
-          variant="body2"
-        >
-          {description}
-        </Typography>
-        <Typography variant="body2" component="p" className={classes.marginTop}>
-          &#60;&#62; {languages}
-        </Typography>
-      </CardContent>
+      <CardActionArea>
+        <CardContent>
+          <Typography
+            className={classes.title}
+            color="textSecondary"
+            gutterBottom
+          >
+            {title}
+          </Typography>
+          <Typography
+            className={`${classes.description} ${classes.marginTop}`}
+            variant="body2"
+          >
+            {description}
+          </Typography>
+          <Typography
+            variant="body2"
+            component="p"
+            className={classes.marginTop}
+          >
+            &#60;&#62; {languages}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
     </Card>
   );
 };
