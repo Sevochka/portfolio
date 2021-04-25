@@ -5,6 +5,12 @@ module.exports = {
   entry: path.resolve(__dirname, '..', './src/index.tsx'),
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
+    alias: {
+      components: path.resolve(__dirname, '..', './src/components'),
+      assets: path.resolve(__dirname, '..', './src/assets'),
+      hooks: path.resolve(__dirname, '..', './src/hooks'),
+      styles: path.resolve(__dirname, '..', './src/styles'),
+    },
   },
   module: {
     rules: [
