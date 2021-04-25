@@ -41,8 +41,14 @@ const App: FC<Props> = ({ toggleDarkTheme }) => {
             </Button>
           </Grid>
           <Grid item xs={8}>
-            <Projects />
-            <Skills />
+            <Grid container spacing={3} direction="column">
+              <Grid item>
+                <Projects />
+              </Grid>
+              <Grid item>
+                <Skills />
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       </Container>
