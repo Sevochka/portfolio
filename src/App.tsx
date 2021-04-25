@@ -1,14 +1,15 @@
 import React, { FC } from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import { Profile } from './components/profile/Profile';
+import { Profile } from 'components/profile/Profile';
 import {
   Button,
   Container,
   CssBaseline,
   useMediaQuery,
 } from '@material-ui/core';
-import { Projects } from './components/projects/Projects';
+import { Projects } from 'components/projects/Projects';
+import { Skills } from 'components/skills/Skills';
 
 type Props = {
   toggleDarkTheme(): void;
@@ -41,6 +42,7 @@ const App: FC<Props> = ({ toggleDarkTheme }) => {
           </Grid>
           <Grid item xs={8}>
             <Projects />
+            <Skills />
           </Grid>
         </Grid>
       </Container>
