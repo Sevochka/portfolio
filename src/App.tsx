@@ -52,7 +52,7 @@ const App: FC<Props> = ({ toggleDarkTheme }) => {
             </div>
           </Grid>
           <Grid item xs={gridSizeMain}>
-            <Grid container spacing={3} direction="column">
+            <Grid spacing={3} direction="column">
               <Grid item>
                 <Projects />
               </Grid>
