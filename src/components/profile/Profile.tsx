@@ -50,6 +50,7 @@ const Profile = () => {
     theme.breakpoints.between('xs', 'sm')
   );
   const gridDirection = matches ? 'row' : 'column';
+  const alignItems = matches ? 'center' : 'flex-start';
 
   const typographySameProps: TypographyProps = {
     align: 'left',
@@ -61,7 +62,7 @@ const Profile = () => {
       spacing={2}
       className={classes.root}
       direction={gridDirection}
-      alignItems="flex-start"
+      alignItems={alignItems}
       wrap="nowrap"
     >
       <Grid item>

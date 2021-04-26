@@ -25,6 +25,9 @@ const useStyles = makeStyles((theme: Theme) =>
       top: 0 /* required */,
       width: '100%',
     },
+    marginTopSkills: {
+      marginTop: theme.spacing(2),
+    },
   })
 );
 
@@ -53,13 +56,11 @@ const App: FC<Props> = ({ toggleDarkTheme }) => {
             </div>
           </Grid>
           <Grid item xs={gridSizeMain}>
-            <Grid>
-              <Grid item>
-                <Projects />
-              </Grid>
-              <Grid item>
-                <Skills />
-              </Grid>
+            <Grid item>
+              <Projects />
+            </Grid>
+            <Grid item className={classes.marginTopSkills}>
+              <Skills />
             </Grid>
           </Grid>
         </Grid>
