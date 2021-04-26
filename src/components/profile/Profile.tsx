@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
-import { Grid, Typography, TypographyProps } from '@material-ui/core';
+import {
+  Grid,
+  Typography,
+  TypographyProps,
+  useMediaQuery,
+} from '@material-ui/core';
 import { ProfileLinks } from './ProfileLinks';
 import grey from '@material-ui/core/colors/grey';
 import { getGithubClient } from 'api/github';
@@ -41,6 +46,11 @@ const Profile = () => {
     });
   }, []);
 
+  const matches = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.between('xs', 'sm')
+  );
+  const gridDirection = matches ? 'row' : 'column';
+
   const typographySameProps: TypographyProps = {
     align: 'left',
     color: 'initial',
@@ -50,8 +60,9 @@ const Profile = () => {
       container
       spacing={2}
       className={classes.root}
-      direction="column"
+      direction={gridDirection}
       alignItems="flex-start"
+      wrap="nowrap"
     >
       <Grid item>
         <Avatar
@@ -62,18 +73,20 @@ const Profile = () => {
           onDragStart={(event) => event.preventDefault()}
         />
       </Grid>
-      <Grid item>
-        <Typography {...typographySameProps} variant="h6">
-          {githubClient.name}
-        </Typography>
-      </Grid>
-      <Grid item>
-        <Typography {...typographySameProps} variant="subtitle2">
-          {githubClient.bio}
-        </Typography>
-      </Grid>
-      <Grid item>
-        <ProfileLinks flexClasses={classes.flex} />
+      <Grid spacing={2} container item wrap="nowrap" direction="column">
+        <Grid item>
+          <Typography {...typographySameProps} variant="h6">
+            {githubClient.name}
+          </Typography>
+        </Grid>
+        <Grid item>
+          <Typography {...typographySameProps} variant="subtitle2">
+            {githubClient.bio}
+          </Typography>
+        </Grid>
+        <Grid item>
+          <ProfileLinks flexClasses={classes.flex} />
+        </Grid>
       </Grid>
     </Grid>
   );

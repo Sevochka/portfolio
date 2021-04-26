@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
     profileSticky: {
       position: 'sticky',
       top: 0 /* required */,
+      width: '100%',
     },
   })
 );
@@ -52,7 +53,7 @@ const App: FC<Props> = ({ toggleDarkTheme }) => {
             </div>
           </Grid>
           <Grid item xs={gridSizeMain}>
-            <Grid spacing={3} direction="column">
+            <Grid>
               <Grid item>
                 <Projects />
               </Grid>
