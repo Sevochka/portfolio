@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import { SkillItem } from 'components/skills/SkillItem';
 import ReactIcon from 'assets/atom.png';
-import { createStyles, Grid, useMediaQuery } from '@material-ui/core';
+import { createStyles, Grid } from '@material-ui/core';
 import { TitlePart } from 'components/shared/TitlePart';
 import SkillsIcon from '@material-ui/icons/AssessmentOutlined';
-import { makeStyles, Theme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 
 const temporaryData = [
   {
@@ -31,12 +31,13 @@ const useStyles = makeStyles((theme) =>
   })
 );
 
-const Skills: FC = () => {
+type Props = {
+  matchesXsToSm: boolean;
+};
+
+const Skills: FC<Props> = ({ matchesXsToSm }) => {
   const styles = useStyles();
-  const matches = useMediaQuery((theme: Theme) =>
-    theme.breakpoints.between('xs', 'sm')
-  );
-  const gridDirection = matches ? 'column' : 'row';
+  const gridDirection = matchesXsToSm ? 'column' : 'row';
 
   const mapData = temporaryData.map((skill, i) => (
     <Grid item key={i} className={styles.gridItem}>

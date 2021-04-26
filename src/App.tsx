@@ -34,13 +34,13 @@ const useStyles = makeStyles((theme: Theme) =>
 const App: FC<Props> = ({ toggleDarkTheme }) => {
   const classes = useStyles();
 
-  const matches = useMediaQuery((theme: Theme) =>
+  const matchesXsToSm = useMediaQuery((theme: Theme) =>
     theme.breakpoints.between('xs', 'sm')
   );
-  const gridDirection = matches ? 'column' : 'row';
+  const gridDirection = matchesXsToSm ? 'column' : 'row';
 
-  const gridSizeProfile: GridSize = matches ? 12 : 4;
-  const gridSizeMain: GridSize = matches ? 12 : 8;
+  const gridSizeProfile: GridSize = matchesXsToSm ? 12 : 4;
+  const gridSizeMain: GridSize = matchesXsToSm ? 12 : 8;
 
   return (
     <>
@@ -49,7 +49,7 @@ const App: FC<Props> = ({ toggleDarkTheme }) => {
         <Grid container spacing={3} direction={gridDirection}>
           <Grid item xs={gridSizeProfile}>
             <div className={classes.profileSticky}>
-              <Profile />
+              <Profile matchesXsToSm={matchesXsToSm} />
               <Button color="primary" onClick={toggleDarkTheme}>
                 Toggle theme
               </Button>
@@ -57,10 +57,10 @@ const App: FC<Props> = ({ toggleDarkTheme }) => {
           </Grid>
           <Grid item xs={gridSizeMain}>
             <Grid item>
-              <Projects />
+              <Projects matchesXsToSm={matchesXsToSm} />
             </Grid>
             <Grid item className={classes.marginTopSkills}>
-              <Skills />
+              <Skills matchesXsToSm={matchesXsToSm} />
             </Grid>
           </Grid>
         </Grid>

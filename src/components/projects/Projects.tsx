@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import { TitlePart } from '../shared/TitlePart';
 import AppsOutlinedIcon from '@material-ui/icons/AppsOutlined';
 import { ProjectCard } from './ProjectCard';
-import { createStyles, Grid, useMediaQuery } from '@material-ui/core';
-import { makeStyles, Theme } from '@material-ui/core/styles';
+import { createStyles, Grid } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 
 const temporaryData = [
   {
@@ -29,6 +29,10 @@ const temporaryData = [
   },
 ];
 
+type Props = {
+  matchesXsToSm: boolean;
+};
+
 const useStyles = makeStyles((theme) =>
   createStyles({
     gridProject: {
@@ -42,11 +46,8 @@ const useStyles = makeStyles((theme) =>
   })
 );
 
-const Projects: FC = () => {
+const Projects: FC<Props> = ({ matchesXsToSm }) => {
   const styles = useStyles();
-  const matches = useMediaQuery((theme: Theme) =>
-    theme.breakpoints.between('xs', 'sm')
-  );
 
   const mapData = temporaryData.map((project) => (
     <Grid item key={project.id} className={styles.gridProject}>
@@ -54,7 +55,7 @@ const Projects: FC = () => {
     </Grid>
   ));
 
-  const gridDirection = matches ? 'column' : 'row';
+  const gridDirection = matchesXsToSm ? 'column' : 'row';
   return (
     <>
       <TitlePart title="Projects" IconComponent={AppsOutlinedIcon} />

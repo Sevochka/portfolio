@@ -1,12 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Avatar from '@material-ui/core/Avatar';
-import {
-  Grid,
-  Typography,
-  TypographyProps,
-  useMediaQuery,
-} from '@material-ui/core';
+import { Grid, Typography, TypographyProps } from '@material-ui/core';
 import { ProfileLinks } from './ProfileLinks';
 import grey from '@material-ui/core/colors/grey';
 import { getGithubClient } from 'api/github';
@@ -32,7 +27,11 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const Profile = () => {
+type Props = {
+  matchesXsToSm: boolean;
+};
+
+const Profile: FC<Props> = ({ matchesXsToSm }) => {
   const classes = useStyles();
   const [githubClient, setGithubClient] = useState<GitHubClient>(
     {} as GitHubClient
@@ -46,11 +45,8 @@ const Profile = () => {
     });
   }, []);
 
-  const matches = useMediaQuery((theme: Theme) =>
-    theme.breakpoints.between('xs', 'sm')
-  );
-  const gridDirection = matches ? 'row' : 'column';
-  const alignItems = matches ? 'center' : 'flex-start';
+  const gridDirection = matchesXsToSm ? 'row' : 'column';
+  const alignItems = matchesXsToSm ? 'center' : 'flex-start';
 
   const typographySameProps: TypographyProps = {
     align: 'left',
