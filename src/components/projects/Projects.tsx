@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import { TitlePart } from '../shared/TitlePart';
 import AppsOutlinedIcon from '@material-ui/icons/AppsOutlined';
 import { ProjectCard } from './ProjectCard';
-import { createStyles, Grid } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import { createStyles, Grid, useMediaQuery } from '@material-ui/core';
+import { makeStyles, Theme } from '@material-ui/core/styles';
 
 const temporaryData = [
   {
@@ -29,16 +29,25 @@ const temporaryData = [
   },
 ];
 
-const useStyles = makeStyles(() =>
+const useStyles = makeStyles((theme) =>
   createStyles({
     gridProject: {
       width: '50%',
+    },
+    [theme.breakpoints.between('xs', 'sm')]: {
+      gridProject: {
+        width: '100%',
+      },
     },
   })
 );
 
 const Projects: FC = () => {
   const styles = useStyles();
+  const matches = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.between('xs', 'sm')
+  );
+
   const mapData = temporaryData.map((project) => (
     <Grid item key={project.id} className={styles.gridProject}>
       <ProjectCard {...project} />
@@ -47,7 +56,12 @@ const Projects: FC = () => {
   return (
     <>
       <TitlePart title="Projects" IconComponent={AppsOutlinedIcon} />
-      <Grid container spacing={2} direction="row" alignItems="flex-start">
+      <Grid
+        container
+        spacing={2}
+        direction={matches ? 'column' : 'row'}
+        alignItems="flex-start"
+      >
         {mapData}
       </Grid>
     </>

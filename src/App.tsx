@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
+import Grid, { GridSize } from '@material-ui/core/Grid';
 import { Profile } from 'components/profile/Profile';
 import {
   Button,
@@ -30,15 +30,20 @@ const useStyles = makeStyles((theme: Theme) =>
 const App: FC<Props> = ({ toggleDarkTheme }) => {
   const classes = useStyles();
 
-  const matches = useMediaQuery('(min-width:600px)');
-  const gridDirection = matches ? 'row' : 'column';
+  const matches = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.between('xs', 'sm')
+  );
+  const gridDirection = matches ? 'column' : 'row';
+
+  const gridSizeProfile: GridSize = matches ? 12 : 4;
+  const gridSizeMain: GridSize = matches ? 12 : 8;
 
   return (
     <>
       <CssBaseline />
-      <Container maxWidth="md" className={classes.container}>
+      <Container maxWidth={'lg'} className={classes.container}>
         <Grid container spacing={3} direction={gridDirection}>
-          <Grid item xs={4}>
+          <Grid item xs={gridSizeProfile}>
             <div className={classes.profileSticky}>
               <Profile />
               <Button color="primary" onClick={toggleDarkTheme}>
@@ -46,7 +51,7 @@ const App: FC<Props> = ({ toggleDarkTheme }) => {
               </Button>
             </div>
           </Grid>
-          <Grid item xs={8}>
+          <Grid item xs={gridSizeMain}>
             <Grid container spacing={3} direction="column">
               <Grid item>
                 <Projects />
