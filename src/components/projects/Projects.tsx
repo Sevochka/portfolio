@@ -53,13 +53,15 @@ const Projects: FC = () => {
       <ProjectCard {...project} />
     </Grid>
   ));
+
+  const gridDirection = matches ? 'column' : 'row';
   return (
     <>
       <TitlePart title="Projects" IconComponent={AppsOutlinedIcon} />
       <Grid
         container
         spacing={2}
-        direction={matches ? 'column' : 'row'}
+        direction={gridDirection}
         alignItems="flex-start"
       >
         {mapData}

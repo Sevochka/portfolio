@@ -7,7 +7,6 @@ type Props = {
 };
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
     textAlign: 'center',
     paddingTop: 10,
   },
