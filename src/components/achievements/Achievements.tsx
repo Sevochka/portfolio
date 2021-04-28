@@ -2,6 +2,8 @@ import React, { FC } from 'react';
 import { AchievementItem } from 'components/achievements/AchievementItem';
 import { makeStyles } from '@material-ui/core/styles';
 import { createStyles, Grid } from '@material-ui/core';
+import { TitlePart } from 'components/shared/TitlePart';
+import StarIcon from '@material-ui/icons/StarBorderOutlined';
 
 const tempData = ['1', '2', '3'];
 
@@ -26,6 +28,7 @@ const Achievements: FC<Props> = ({ matchesXsToSm }) => {
   const gridDirection = matchesXsToSm ? 'column' : 'row';
   return (
     <>
+      <TitlePart title="Achievements" IconComponent={StarIcon} />
       <Grid
         container
         spacing={2}
