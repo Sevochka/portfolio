@@ -10,6 +10,7 @@ import {
 } from '@material-ui/core';
 import { Projects } from 'components/projects/Projects';
 import { Skills } from 'components/skills/Skills';
+import { Achievements } from 'components/achievements/Achievements';
 
 type Props = {
   toggleDarkTheme(): void;
@@ -61,6 +62,9 @@ const App: FC<Props> = ({ toggleDarkTheme }) => {
             </Grid>
             <Grid item className={classes.marginTopSkills}>
               <Skills matchesXsToSm={matchesXsToSm} />
+            </Grid>
+            <Grid item className={classes.marginTopSkills}>
+              <Achievements matchesXsToSm={matchesXsToSm} />
             </Grid>
           </Grid>
         </Grid>
