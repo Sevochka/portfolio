@@ -4,8 +4,34 @@ import { makeStyles } from '@material-ui/core/styles';
 import { createStyles, Grid } from '@material-ui/core';
 import { TitlePart } from 'components/shared/TitlePart';
 import StarIcon from '@material-ui/icons/StarBorderOutlined';
+import KTS from 'assets/Diplomas/КТС.jpg';
+import C3DLabs from 'assets/Diplomas/C3DLabs.jpg';
+import Forge from 'assets/Diplomas/Forge.jpg';
+import Smithy from 'assets/Diplomas/Кузница.jpg';
+import CISCO from 'assets/Diplomas/СИСКО.jpg';
 
-const tempData = ['1', '2', '3'];
+const tempData = [
+  {
+    image: KTS,
+    title: 'KTS Frontend-developer',
+  },
+  {
+    image: C3DLabs,
+    title: 'C3D Labs Developton',
+  },
+  {
+    image: Forge,
+    title: 'Autodesk 3D Hackathon',
+  },
+  {
+    image: Smithy,
+    title: 'MPU 3D Hackathon',
+  },
+  {
+    image: CISCO,
+    title: 'CISCO IT Essentials',
+  },
+];
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -36,8 +62,8 @@ const Achievements: FC<Props> = ({ matchesXsToSm }) => {
         alignItems="flex-start"
       >
         {tempData.map((el) => (
-          <Grid item key={el} className={styles.gridItem}>
-            <AchievementItem key={el} />
+          <Grid item key={el.title} className={styles.gridItem}>
+            <AchievementItem image={el.image} title={el.title} />
           </Grid>
         ))}
       </Grid>

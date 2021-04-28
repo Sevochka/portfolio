@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 import {
   FiCard,
   FiCardActionArea,
@@ -8,7 +8,6 @@ import {
 import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-import KTS from 'assets/Diplomas/КТС.jpg';
 import { grey } from '@material-ui/core/colors';
 const useStyles = makeStyles({
   container: {
@@ -17,10 +16,6 @@ const useStyles = makeStyles({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  /**
-   * Max Card with for demo
-   * same values used in Material-Ui Card Demos
-   */
   card: {
     maxWidth: 265,
     minHeight: 150,
@@ -32,32 +27,44 @@ const useStyles = makeStyles({
       },
     },
   },
-
   media: {
     height: '150px',
     backgroundSize: 'contain',
   },
   fiCardContent: {
     color: '#ffffff',
-    backgroundColor: 'rgba(0,0,0,.24)',
+    backgroundColor: 'rgba(0,0,0,.55)',
     top: '-50%',
     transition: '0.9s',
+    padding: 10,
   },
   fiCardContentTextSecondary: {
     color: 'rgba(255,255,255,0.78)',
   },
+  cardTitle: {
+    fontSize: '0.9rem',
+  },
 });
 
-const AchievementItem = () => {
+type Props = {
+  image: string;
+  title: string;
+};
+
+const AchievementItem: FC<Props> = ({ image, title }) => {
   const classes = useStyles();
   return (
     <>
       <FiCard className={classes.card}>
         <FiCardActionArea>
-          <FiCardMedia className={classes.media} image={KTS} />
+          <FiCardMedia className={classes.media} image={image} />
           <FiCardContent className={classes.fiCardContent}>
-            <Typography variant="h5" component="h2">
-              KTS
+            <Typography
+              variant="h6"
+              component="h2"
+              className={classes.cardTitle}
+            >
+              {title}
             </Typography>
           </FiCardContent>
         </FiCardActionArea>
