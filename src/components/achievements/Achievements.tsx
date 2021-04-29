@@ -9,8 +9,18 @@ import C3DLabs from 'assets/Diplomas/C3DLabs.jpg';
 import Forge from 'assets/Diplomas/Forge.jpg';
 import Smithy from 'assets/Diplomas/Кузница.jpg';
 import CISCO from 'assets/Diplomas/СИСКО.jpg';
+import Umnik from 'assets/Умник.jpg';
+import ForgeResearch from 'assets/ForgeResearch.jpg';
 
 const tempData = [
+  {
+    image: Umnik,
+    title: 'Программа «УМНИК»',
+  },
+  {
+    image: ForgeResearch,
+    title: 'Forge Research',
+  },
   {
     image: KTS,
     title: 'KTS Frontend-developer',
