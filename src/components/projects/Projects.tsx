@@ -8,21 +8,21 @@ import { makeStyles } from '@material-ui/core/styles';
 const temporaryData = [
   {
     description: 'Мониторинг заболевших коронавирусом',
-    languages: 'Typescript',
+    stack: ['Typescript', 'React'],
     title: 'Coronavirus Monitor',
     link: 'https://vk.com',
     id: 1,
   },
   {
     description: 'Мониторинг заболевших коронавирусом',
-    languages: 'Typescript',
+    stack: ['Typescript'],
     title: 'Coronavirus Monitor',
     link: 'https://vk.com',
     id: 2,
   },
   {
     description: 'Мониторинг заболевших коронавирусом',
-    languages: 'Typescript',
+    stack: ['Typescript'],
     title: 'Coronavirus Monitor',
     link: 'https://vk.com',
     id: 3,

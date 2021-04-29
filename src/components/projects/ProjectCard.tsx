@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 type Props = {
   title: string;
   description: string;
-  languages: string[] | string;
+  stack: string[];
   link: string;
 };
 
@@ -13,6 +13,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import { CardActionArea, createStyles } from '@material-ui/core';
 import { grey } from '@material-ui/core/colors';
+import CodeIcon from '@material-ui/icons/Code';
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -35,12 +36,20 @@ const useStyles = makeStyles((theme) =>
     marginTop: {
       marginTop: theme.spacing(1),
     },
+    alignMiddle: {
+      verticalAlign: 'middle',
+      marginRight: theme.spacing(1),
+    },
+    codeIcon: {
+      fontSize: 19,
+    },
   })
 );
 
-const ProjectCard: FC<Props> = ({ title, description, languages }) => {
+const ProjectCard: FC<Props> = ({ title, description, stack }) => {
   const classes = useStyles();
 
+  const stackStr = stack.join(', ');
   return (
     <Card className={classes.root} variant="outlined">
       <CardActionArea>
@@ -63,7 +72,10 @@ const ProjectCard: FC<Props> = ({ title, description, languages }) => {
             component="p"
             className={classes.marginTop}
           >
-            &#60;&#62; {languages}
+            <CodeIcon
+              className={`${classes.alignMiddle} ${classes.codeIcon}`}
+            />
+            <span className={classes.alignMiddle}>{stackStr}</span>
           </Typography>
         </CardContent>
       </CardActionArea>
