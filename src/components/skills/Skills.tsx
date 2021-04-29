@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import { SkillItem } from 'components/skills/SkillItem';
-import ReactIcon from 'assets/atom.png';
+import ReactImage from 'assets/react-js-logo.png';
+import ThreeImage from 'assets/three-js-logo.png';
+import NodeImage from 'assets/node-js-logo.png';
 import { createStyles, Grid } from '@material-ui/core';
 import { TitlePart } from 'components/shared/TitlePart';
 import SkillsIcon from '@material-ui/icons/AssessmentOutlined';
@@ -8,13 +10,16 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const temporaryData = [
   {
-    icon: ReactIcon,
+    icon: ReactImage,
+    cardContentText: 'I love React and use it every single day.',
   },
   {
-    icon: ReactIcon,
+    icon: ThreeImage,
+    cardContentText: 'I have experience in three.js and its awesome.',
   },
   {
-    icon: ReactIcon,
+    icon: NodeImage,
+    cardContentText: 'Sometimes I use node.js cause I can.',
   },
 ];
 
