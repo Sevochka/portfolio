@@ -17,7 +17,6 @@ const useStyles = makeStyles({
     justifyContent: 'center',
   },
   card: {
-    maxWidth: 265,
     minHeight: 150,
     border: '1px solid transparent',
     '&:hover': {
