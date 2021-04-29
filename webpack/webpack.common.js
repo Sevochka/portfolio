@@ -11,6 +11,7 @@ module.exports = {
       hooks: path.resolve(__dirname, '..', './src/hooks'),
       styles: path.resolve(__dirname, '..', './src/styles'),
       api: path.resolve(__dirname, '..', './src/api'),
+      App: path.resolve(__dirname, '..', './src/App'),
     },
   },
   module: {
@@ -45,6 +46,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
+      title: 'Portfolio',
+      favicon: './src/assets/favicon.svg',
       template: path.resolve(__dirname, '..', './src/index.html'),
     }),
   ],
