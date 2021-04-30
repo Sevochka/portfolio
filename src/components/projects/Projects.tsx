@@ -4,28 +4,40 @@ import AppsOutlinedIcon from '@material-ui/icons/AppsOutlined';
 import { ProjectCard } from './ProjectCard';
 import { createStyles, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { DialogInfo, openDialog } from 'components/shared/DialogInfo';
 
 const temporaryData = [
   {
-    description: 'Мониторинг заболевших коронавирусом',
-    stack: ['Typescript', 'React'],
-    title: 'Coronavirus Monitor',
+    title: 'MPU Cloud',
+    description: 'Мультифункциональное хранилище электронных моделей изделий.',
+    stack: ['React', 'TypeScript', 'ThreeJS', 'MaterialUI', 'Mobx'],
     link: 'https://vk.com',
     id: 1,
+    jsxDialogContent: <>Hello</>,
   },
   {
-    description: 'Мониторинг заболевших коронавирусом',
-    stack: ['Typescript'],
-    title: 'Coronavirus Monitor',
+    title: 'Three-IETM',
+    description: 'Интерактивное руководство редуктора с анимациями.',
+    stack: ['React', 'TypeScript', 'ThreeJS', 'MaterialUI', 'Mobx'],
     link: 'https://vk.com',
     id: 2,
+    jsxDialogContent: <>Hello</>,
   },
   {
-    description: 'Мониторинг заболевших коронавирусом',
-    stack: ['Typescript'],
     title: 'Coronavirus Monitor',
+    description: 'Мониторинг заболевших коронавирусом.',
+    stack: ['React', 'TypeScript', 'Webpack', 'AntD', 'Highcharts', 'Mobx'],
     link: 'https://vk.com',
     id: 3,
+    jsxDialogContent: <>Hello</>,
+  },
+  {
+    title: 'Online Shop',
+    description: 'Мониторинг заболевших коронавирусом.',
+    stack: ['React', 'TypeScript', 'Webpack', 'AntD', 'Highcharts', 'Mobx'],
+    link: 'https://vk.com',
+    id: 4,
+    jsxDialogContent: <>Hello</>,
   },
 ];
 
@@ -49,9 +61,16 @@ const useStyles = makeStyles((theme) =>
 const Projects: FC<Props> = ({ matchesXsToSm }) => {
   const styles = useStyles();
 
+  const handleDialogOpen = (projectId: number) => {
+    const project = temporaryData.find((p) => {
+      return p.id === projectId;
+    });
+    if (project) return openDialog(project.title, project.jsxDialogContent);
+  };
+
   const mapData = temporaryData.map((project) => (
     <Grid item key={project.id} className={styles.gridProject}>
-      <ProjectCard {...project} />
+      <ProjectCard {...project} onCardClick={handleDialogOpen} />
     </Grid>
   ));
 
@@ -67,6 +86,7 @@ const Projects: FC<Props> = ({ matchesXsToSm }) => {
       >
         {mapData}
       </Grid>
+      <DialogInfo />
     </>
   );
 };

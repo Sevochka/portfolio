@@ -5,6 +5,8 @@ type Props = {
   description: string;
   stack: string[];
   link: string;
+  onCardClick: (id: number) => void;
+  id: number;
 };
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -46,13 +48,21 @@ const useStyles = makeStyles((theme) =>
   })
 );
 
-const ProjectCard: FC<Props> = ({ title, description, stack }) => {
+const ProjectCard: FC<Props> = ({
+  id,
+  title,
+  description,
+  stack,
+  onCardClick,
+}) => {
   const classes = useStyles();
-
+  const handleCardClick = () => {
+    onCardClick(id);
+  };
   const stackStr = stack.join(', ');
   return (
     <Card className={classes.root} variant="outlined">
-      <CardActionArea>
+      <CardActionArea onClick={handleCardClick}>
         <CardContent>
           <Typography
             className={classes.title}
