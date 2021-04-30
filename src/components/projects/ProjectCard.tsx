@@ -30,10 +30,12 @@ const useStyles = makeStyles((theme) =>
       fontSize: 14,
     },
     description: {
+      fontSize: 16,
+    },
+    overflowEllipsis: {
       textOverflow: 'ellipsis',
       overflow: 'hidden',
       whiteSpace: 'nowrap',
-      fontSize: 16,
     },
     marginTop: {
       marginTop: theme.spacing(1),
@@ -72,7 +74,7 @@ const ProjectCard: FC<Props> = ({
             {title}
           </Typography>
           <Typography
-            className={`${classes.description} ${classes.marginTop}`}
+            className={`${classes.description} ${classes.marginTop} ${classes.overflowEllipsis}`}
             variant="body2"
           >
             {description}
@@ -80,7 +82,7 @@ const ProjectCard: FC<Props> = ({
           <Typography
             variant="body2"
             component="p"
-            className={classes.marginTop}
+            className={`${classes.marginTop} ${classes.overflowEllipsis}`}
           >
             <CodeIcon
               className={`${classes.alignMiddle} ${classes.codeIcon}`}

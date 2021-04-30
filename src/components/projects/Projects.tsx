@@ -33,8 +33,8 @@ const temporaryData = [
   },
   {
     title: 'Online Shop',
-    description: 'Мониторинг заболевших коронавирусом.',
-    stack: ['React', 'TypeScript', 'Webpack', 'AntD', 'Highcharts', 'Mobx'],
+    description: 'Торговая площадка курсов.',
+    stack: ['NodeJS', 'JavaScript', 'Express'],
     link: 'https://vk.com',
     id: 4,
     jsxDialogContent: <>Hello</>,
