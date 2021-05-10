@@ -13,7 +13,7 @@ const temporaryData = [
     stack: ['React', 'TypeScript', 'ThreeJS', 'MaterialUI', 'Mobx'],
     link: 'https://vk.com',
     id: 1,
-    jsxDialogContent: <>Hello</>,
+    jsxDialogContent: <>Описание. Технологии.</>,
   },
   {
     title: 'Three-IETM',
