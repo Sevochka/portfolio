@@ -5,39 +5,86 @@ import { ProjectCard } from './ProjectCard';
 import { createStyles, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { DialogInfo, openDialog } from 'components/shared/DialogInfo';
+import KTS from 'assets/Diplomas/C3DLabs.jpg';
+import { ProjectDialogContent } from 'components/projects/ProjectDialogContent';
+import { ProjectData } from 'types';
 
-const temporaryData = [
+const temporaryData: ProjectData[] = [
   {
+    id: 1,
     title: 'MPU Cloud',
     description: 'Мультифункциональное хранилище электронных моделей изделий.',
     stack: ['React', 'TypeScript', 'ThreeJS', 'MaterialUI', 'Mobx'],
-    link: 'https://vk.com',
-    id: 1,
-    jsxDialogContent: <>Описание. Технологии.</>,
+    features: [
+      {
+        tooltipText: 'Петь песни',
+        text: 'Петь песни',
+      },
+    ],
+    links: [{ title: 'Github', link: 'https://github.com' }],
+    images: [
+      {
+        original: KTS,
+        thumbnail: KTS,
+      },
+    ],
   },
   {
+    id: 2,
     title: 'Three-IETM',
     description: 'Интерактивное руководство редуктора с анимациями.',
     stack: ['React', 'TypeScript', 'ThreeJS', 'MaterialUI', 'Mobx'],
-    link: 'https://vk.com',
-    id: 2,
-    jsxDialogContent: <>Hello</>,
+    features: [
+      {
+        tooltipText: 'Петь песни',
+        text: 'Петь песни',
+      },
+    ],
+    links: [{ title: 'Github', link: 'https://github.com' }],
+    images: [
+      {
+        original: KTS,
+        thumbnail: KTS,
+      },
+    ],
   },
   {
+    id: 3,
     title: 'Coronavirus Monitor',
     description: 'Мониторинг заболевших коронавирусом.',
     stack: ['React', 'TypeScript', 'Webpack', 'AntD', 'Highcharts', 'Mobx'],
-    link: 'https://vk.com',
-    id: 3,
-    jsxDialogContent: <>Hello</>,
+    features: [
+      {
+        tooltipText: 'Петь песни',
+        text: 'Петь песни',
+      },
+    ],
+    links: [{ title: 'Github', link: 'https://github.com' }],
+    images: [
+      {
+        original: KTS,
+        thumbnail: KTS,
+      },
+    ],
   },
   {
+    id: 4,
     title: 'Online Shop',
     description: 'Торговая площадка курсов.',
     stack: ['NodeJS', 'JavaScript', 'Express'],
-    link: 'https://vk.com',
-    id: 4,
-    jsxDialogContent: <>Hello</>,
+    features: [
+      {
+        tooltipText: 'Петь песни',
+        text: 'Петь песни',
+      },
+    ],
+    links: [{ title: 'Github', link: 'https://github.com' }],
+    images: [
+      {
+        original: KTS,
+        thumbnail: KTS,
+      },
+    ],
   },
 ];
 
@@ -65,7 +112,19 @@ const Projects: FC<Props> = ({ matchesXsToSm }) => {
     const project = temporaryData.find((p) => {
       return p.id === projectId;
     });
-    if (project) return openDialog(project.title, project.jsxDialogContent);
+    if (!project) return;
+    const { description, stack, features, links, images } = project;
+    if (project)
+      return openDialog(
+        project.title,
+        <ProjectDialogContent
+          description={description}
+          stack={stack}
+          features={features}
+          links={links}
+          images={images}
+        />
+      );
   };
 
   const mapData = temporaryData.map((project) => (

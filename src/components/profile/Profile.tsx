@@ -9,6 +9,11 @@ import { GitHubClient } from 'types';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
+    '@global': {
+      '*::-webkit-scrollbar': {
+        width: 20,
+      },
+    },
     root: {},
     large: {
       width: theme.spacing(20),
