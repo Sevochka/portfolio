@@ -11,6 +11,7 @@ module.exports = {
       hooks: path.resolve(__dirname, '..', './src/hooks'),
       styles: path.resolve(__dirname, '..', './src/styles'),
       api: path.resolve(__dirname, '..', './src/api'),
+      data: path.resolve(__dirname, '..', './src/data'),
       App: path.resolve(__dirname, '..', './src/App'),
     },
   },
