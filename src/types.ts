@@ -50,4 +50,4 @@ type ProjectData = {
   images: Image[];
 };
 
-export type { GitHubClient, ProjectData };
+export type { GitHubClient, ProjectData, Links, Features, Image };

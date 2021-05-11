@@ -17,10 +17,12 @@ import KeyboardTabOutlinedIcon from '@material-ui/icons/ForwardOutlined';
 import ImageGallery from 'react-image-gallery';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import grey from '@material-ui/core/colors/grey';
+import { Features, Image, Links } from 'types';
 const useStyles = makeStyles(() =>
   createStyles({
     listFeatures: {
       marginLeft: 20,
+      paddingBottom: 0,
     },
     listItemFeatures: {
       padding: 0,
@@ -46,18 +48,7 @@ const useStyles = makeStyles(() =>
     },
   })
 );
-type Links = {
-  title: string;
-  link: string;
-};
-type Features = {
-  text: string;
-  tooltipText: string;
-};
-type Image = {
-  original: string;
-  thumbnail: string;
-};
+
 type Props = {
   description: string;
   stack: string[];
@@ -74,9 +65,7 @@ const ProjectDialogContent: FC<Props> = ({
   images,
 }) => {
   const classes = useStyles();
-  const stackMap = stack.map((el) => {
-    return <>{el}, </>;
-  });
+  const stackStr = stack.join(', ');
   const featuresMap = features.map(({ tooltipText, text }) => {
     return (
       <ListItem className={classes.listItemFeatures} key={text}>
@@ -126,7 +115,7 @@ const ProjectDialogContent: FC<Props> = ({
           style={{ marginRight: 5, position: 'relative', top: 5 }}
           color="primary"
         />
-        {stackMap}
+        {stackStr}
       </Typography>
       <Typography variant="body1" component="p" gutterBottom>
         <ListAltIcon
