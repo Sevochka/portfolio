@@ -65,7 +65,7 @@ const Projects: FC<Props> = ({ matchesXsToSm }) => {
       >
         {mapData}
       </Grid>
-      <DialogInfo />
+      <DialogInfo fullscreen={matchesXsToSm} />
     </>
   );
 };

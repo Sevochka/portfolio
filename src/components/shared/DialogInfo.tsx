@@ -17,7 +17,10 @@ export const openDialog: DialogEmitterFunction = (
   emitter.emit('dialog', title, contentComponent);
 };
 
-const DialogInfo: FC<Record<string, never>> = () => {
+type Props = {
+  fullscreen: boolean;
+};
+const DialogInfo: FC<Props> = ({ fullscreen }) => {
   const [open, setOpen] = useState(false);
   const [title, setTitle] = useState('');
   const [
@@ -44,6 +47,7 @@ const DialogInfo: FC<Record<string, never>> = () => {
         open={open}
         onClose={closeDialog}
         aria-labelledby="form-dialog-title"
+        fullScreen={fullscreen}
       >
         <DialogTitle id="form-dialog-title" style={{ paddingBottom: 0 }}>
           <TitleOutlinedIcon
