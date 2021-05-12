@@ -1,5 +1,10 @@
 import { ProjectData } from 'types';
-import KTS from 'assets/Diplomas/C3DLabs.jpg';
+import {
+  GroupPage,
+  FilesCardView,
+  ViewerCatalog,
+  ViewerMain,
+} from 'assets/projects/mpu-cloud';
 const projects: ProjectData[] = [
   {
     id: 1,
@@ -48,17 +53,37 @@ const projects: ProjectData[] = [
         text: 'Добавление аннотаций на 3D модели.',
       },
       {
+        tooltipText: `Конвертер позволяет конвертировать 3D-модель в более, чем 30 различных форматов.`,
+        text: 'Конвертация моделей путем взаимодействия с сервером.',
+      },
+      {
         tooltipText: `Для организации работы в несколько человек предусмотрено создание групп и назначение 
         прав доступа.`,
         text:
           'Создание и участие в группах для совместной работа пользователей.',
       },
+      {
+        tooltipText: `Администратор группы может удалять/добавлять и изменять права доступа участников группы.`,
+        text: 'Редактирование, добавление и удаления участников в группах.',
+      },
     ],
-    links: [{ title: 'Github', link: 'https://github.com' }],
+    links: [{ title: 'mpu-cloud.ru', link: 'http://mpu-cloud.ru/' }],
     images: [
       {
-        original: KTS,
-        thumbnail: KTS,
+        original: GroupPage,
+        thumbnail: GroupPage,
+      },
+      {
+        original: FilesCardView,
+        thumbnail: FilesCardView,
+      },
+      {
+        original: ViewerCatalog,
+        thumbnail: ViewerCatalog,
+      },
+      {
+        original: ViewerMain,
+        thumbnail: ViewerMain,
       },
     ],
   },
@@ -76,8 +101,8 @@ const projects: ProjectData[] = [
     links: [{ title: 'Github', link: 'https://github.com' }],
     images: [
       {
-        original: KTS,
-        thumbnail: KTS,
+        original: ViewerMain,
+        thumbnail: ViewerMain,
       },
     ],
   },
@@ -95,8 +120,8 @@ const projects: ProjectData[] = [
     links: [{ title: 'Github', link: 'https://github.com' }],
     images: [
       {
-        original: KTS,
-        thumbnail: KTS,
+        original: ViewerMain,
+        thumbnail: ViewerMain,
       },
     ],
   },
@@ -114,8 +139,8 @@ const projects: ProjectData[] = [
     links: [{ title: 'Github', link: 'https://github.com' }],
     images: [
       {
-        original: KTS,
-        thumbnail: KTS,
+        original: ViewerMain,
+        thumbnail: ViewerMain,
       },
     ],
   },

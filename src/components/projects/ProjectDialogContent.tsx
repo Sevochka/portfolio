@@ -46,6 +46,9 @@ const useStyles = makeStyles(() =>
         textDecoration: 'none',
       },
     },
+    linksTypography: {
+      marginBottom: 20,
+    },
   })
 );
 
@@ -65,7 +68,7 @@ const ProjectDialogContent: FC<Props> = ({
   images,
 }) => {
   const classes = useStyles();
-  const stackStr = stack.join(', ');
+  const stackStr = `${stack.join(', ')}.`;
   const featuresMap = features.map(({ tooltipText, text }) => {
     return (
       <ListItem className={classes.listItemFeatures} key={text}>
@@ -110,14 +113,14 @@ const ProjectDialogContent: FC<Props> = ({
         />
         {description}
       </Typography>
-      <Typography variant="body1" component="p" gutterBottom>
+      <Typography variant="body1" component="div" gutterBottom>
         <CodeIcon
           style={{ marginRight: 5, position: 'relative', top: 5 }}
           color="primary"
         />
         {stackStr}
       </Typography>
-      <Typography variant="body1" component="p" gutterBottom>
+      <Typography variant="body1" component="div" gutterBottom>
         <ListAltIcon
           style={{ marginRight: 5, position: 'relative', top: 5 }}
           color="error"
@@ -131,7 +134,11 @@ const ProjectDialogContent: FC<Props> = ({
           {featuresMap}
         </List>
       </Typography>
-      <Typography variant="body1" component="p">
+      <Typography
+        variant="body1"
+        component="div"
+        className={classes.linksTypography}
+      >
         <LinkOutlinedIcon
           style={{ marginRight: 5, position: 'relative', top: 5 }}
           color="action"
