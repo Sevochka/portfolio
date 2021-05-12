@@ -76,6 +76,7 @@ const DialogInfo: FC<Props> = ({ fullscreen }) => {
         open={open}
         onClose={closeDialog}
         aria-labelledby="form-dialog-title"
+        maxWidth="md"
         fullScreen={fullscreen}
       >
         <AppBar className={classes.appBar}>
