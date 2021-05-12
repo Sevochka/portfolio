@@ -1,20 +1,7 @@
 import { createMuiTheme } from '@material-ui/core';
 import { Theme } from '@material-ui/core/styles';
 
-const lightTheme: Theme = createMuiTheme({
-  overrides: {
-    MuiTooltip: {
-      tooltip: {
-        fontSize: '2rem',
-      },
-    },
-  },
-  palette: {
-    type: 'light',
-  },
-});
-
-const darkTheme: Theme = createMuiTheme({
+const sharedTheme = createMuiTheme({
   overrides: {
     MuiTooltip: {
       tooltip: {
@@ -24,6 +11,17 @@ const darkTheme: Theme = createMuiTheme({
       },
     },
   },
+});
+
+const lightTheme: Theme = createMuiTheme({
+  ...sharedTheme,
+  palette: {
+    type: 'light',
+  },
+});
+
+const darkTheme: Theme = createMuiTheme({
+  ...sharedTheme,
   palette: {
     type: 'dark',
   },
