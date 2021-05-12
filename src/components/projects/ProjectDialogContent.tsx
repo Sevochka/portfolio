@@ -18,6 +18,7 @@ import ImageGallery from 'react-image-gallery';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import grey from '@material-ui/core/colors/grey';
 import { Features, Image, Links } from 'types';
+import { red } from '@material-ui/core/colors';
 const useStyles = makeStyles(() =>
   createStyles({
     listFeatures: {
@@ -27,8 +28,16 @@ const useStyles = makeStyles(() =>
     listItemFeatures: {
       padding: 0,
       cursor: 'pointer',
+      width: 'fit-content',
+      '& svg': {
+        transition: 'all .4s',
+      },
       '&:hover': {
         color: grey[500],
+        '& svg': {
+          transform: 'scale(1.4)',
+          color: red[200],
+        },
       },
     },
     listItemFeaturesIcon: {
