@@ -5,6 +5,13 @@ import {
   ViewerCatalog,
   ViewerMain,
 } from 'assets/projects/mpu-cloud';
+
+import {
+  AnimationDisView,
+  ExplodeView,
+  HideView,
+  MainView,
+} from 'assets/projects/three-ietm';
 const projects: ProjectData[] = [
   {
     id: 1,
@@ -90,19 +97,41 @@ const projects: ProjectData[] = [
   {
     id: 2,
     title: 'Three-IETM',
-    description: 'Интерактивное руководство редуктора с анимациями.',
-    stack: ['React', 'TypeScript', 'ThreeJS', 'MaterialUI', 'Mobx'],
+    description: `Интерактивное электронное техническое руководство (ИЭТР) для двухступенчатого редуктора.`,
+    stack: ['React', 'TypeScript', 'ThreeJS', 'AntDesign', 'Mobx'],
     features: [
       {
-        tooltipText: 'Петь песни',
-        text: 'Петь песни',
+        tooltipText: `Переключить информацию справочного материала можно через меню в левой части экрана или 
+        при выделении конкретной детали в окне вьювера. Справочная информация отобразится в правой части экрана.`,
+        text: `Просмотр справочного материала по эксплуатации, ремонту и по отдельной детали.`,
+      },
+      {
+        tooltipText: `Взаимодействие с моделью включают в себя такие инструменты, как скрытия, отображение и 
+        выделение деталей, автоматическое вращение, изоляция, вписывание в вид, разнесение.`,
+        text: `Просмотр и взаимодействие с 3D-моделью.`,
+      },
+      {
+        tooltipText: `Анимации были разработаны с помощью Blender, хранятся в формате GLB.`,
+        text: `Запуск интерактивные анимации, демонстрирующие использование изделия, ремонт и др.`,
       },
     ],
     links: [{ title: 'Github', link: 'https://github.com' }],
     images: [
       {
-        original: ViewerMain,
-        thumbnail: ViewerMain,
+        original: AnimationDisView,
+        thumbnail: AnimationDisView,
+      },
+      {
+        original: ExplodeView,
+        thumbnail: ExplodeView,
+      },
+      {
+        original: HideView,
+        thumbnail: HideView,
+      },
+      {
+        original: MainView,
+        thumbnail: MainView,
       },
     ],
   },
