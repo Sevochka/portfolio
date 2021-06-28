@@ -4,11 +4,11 @@ import { makeStyles } from '@material-ui/core/styles';
 import { createStyles, Grid } from '@material-ui/core';
 import { TitlePart } from 'components/shared/TitlePart';
 import StarIcon from '@material-ui/icons/StarBorderOutlined';
-import KTS from 'assets/Diplomas/КТС.jpg';
-import C3DLabs from 'assets/Diplomas/C3DLabs.jpg';
-import Forge from 'assets/Diplomas/Forge.jpg';
-import Smithy from 'assets/Diplomas/Кузница.jpg';
-import CISCO from 'assets/Diplomas/СИСКО.jpg';
+import KTS from 'assets/diplomas/КТС.jpg';
+import C3DLabs from 'assets/diplomas/C3DLabs.jpg';
+import Forge from 'assets/diplomas/Forge.jpg';
+import Smithy from 'assets/diplomas/Кузница.jpg';
+import CISCO from 'assets/diplomas/СИСКО.jpg';
 import Umnik from 'assets/Умник.jpg';
 import ForgeResearch from 'assets/ForgeResearch.jpg';
 

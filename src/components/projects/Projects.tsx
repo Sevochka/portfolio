@@ -5,41 +5,8 @@ import { ProjectCard } from './ProjectCard';
 import { createStyles, Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { DialogInfo, openDialog } from 'components/shared/DialogInfo';
-
-const temporaryData = [
-  {
-    title: 'MPU Cloud',
-    description: 'Мультифункциональное хранилище электронных моделей изделий.',
-    stack: ['React', 'TypeScript', 'ThreeJS', 'MaterialUI', 'Mobx'],
-    link: 'https://vk.com',
-    id: 1,
-    jsxDialogContent: <>Hello</>,
-  },
-  {
-    title: 'Three-IETM',
-    description: 'Интерактивное руководство редуктора с анимациями.',
-    stack: ['React', 'TypeScript', 'ThreeJS', 'MaterialUI', 'Mobx'],
-    link: 'https://vk.com',
-    id: 2,
-    jsxDialogContent: <>Hello</>,
-  },
-  {
-    title: 'Coronavirus Monitor',
-    description: 'Мониторинг заболевших коронавирусом.',
-    stack: ['React', 'TypeScript', 'Webpack', 'AntD', 'Highcharts', 'Mobx'],
-    link: 'https://vk.com',
-    id: 3,
-    jsxDialogContent: <>Hello</>,
-  },
-  {
-    title: 'Online Shop',
-    description: 'Торговая площадка курсов.',
-    stack: ['NodeJS', 'JavaScript', 'Express'],
-    link: 'https://vk.com',
-    id: 4,
-    jsxDialogContent: <>Hello</>,
-  },
-];
+import { ProjectDialogContent } from 'components/projects/ProjectDialogContent';
+import { projects } from 'data/projects';
 
 type Props = {
   matchesXsToSm: boolean;
@@ -62,13 +29,25 @@ const Projects: FC<Props> = ({ matchesXsToSm }) => {
   const styles = useStyles();
 
   const handleDialogOpen = (projectId: number) => {
-    const project = temporaryData.find((p) => {
+    const project = projects.find((p) => {
       return p.id === projectId;
     });
-    if (project) return openDialog(project.title, project.jsxDialogContent);
+    if (!project) return;
+    const { description, stack, features, links, images } = project;
+    if (project)
+      return openDialog(
+        project.title,
+        <ProjectDialogContent
+          description={description}
+          stack={stack}
+          features={features}
+          links={links}
+          images={images}
+        />
+      );
   };
 
-  const mapData = temporaryData.map((project) => (
+  const mapData = projects.map((project) => (
     <Grid item key={project.id} className={styles.gridProject}>
       <ProjectCard {...project} onCardClick={handleDialogOpen} />
     </Grid>
@@ -86,7 +65,7 @@ const Projects: FC<Props> = ({ matchesXsToSm }) => {
       >
         {mapData}
       </Grid>
-      <DialogInfo />
+      <DialogInfo fullscreen={matchesXsToSm} />
     </>
   );
 };

@@ -4,7 +4,6 @@ type Props = {
   title: string;
   description: string;
   stack: string[];
-  link: string;
   onCardClick: (id: number) => void;
   id: number;
 };
