@@ -32,6 +32,9 @@ const useStyles = makeStyles((theme) =>
       backgroundColor: 'inherit',
       color: theme.palette.type === 'dark' ? 'white' : 'black',
     },
+    dialogContent: {
+      paddingRight: 8,
+    },
     title: {
       marginLeft: theme.spacing(2),
       flex: 1,
@@ -101,7 +104,9 @@ const DialogInfo: FC<Props> = ({ fullscreen }) => {
           </Toolbar>
         </AppBar>
 
-        <DialogContent>{contentComponent}</DialogContent>
+        <DialogContent className={classes.dialogContent}>
+          {contentComponent}
+        </DialogContent>
       </Dialog>
     </>
   );

@@ -5,7 +5,6 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
-  Tooltip,
   Typography,
 } from '@material-ui/core';
 import DescriptionIcon from '@material-ui/icons/DescriptionOutlined';
@@ -19,6 +18,7 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 import grey from '@material-ui/core/colors/grey';
 import { Features, Image, Links } from 'types';
 import { red } from '@material-ui/core/colors';
+import { CustomizedToolTip } from 'components/shared/CustomTooltip';
 const useStyles = makeStyles(() =>
   createStyles({
     listFeatures: {
@@ -84,14 +84,14 @@ const ProjectDialogContent: FC<Props> = ({
         <ListItemIcon className={classes.listItemFeaturesIcon}>
           <ChevronRightOutlined />
         </ListItemIcon>
-        <Tooltip
+        <CustomizedToolTip
           title={tooltipText}
           className={classes.listItemFeaturesTooltip}
           aria-label="add"
           placement="top-start"
         >
           <ListItemText primary={text} color="inherit" />
-        </Tooltip>
+        </CustomizedToolTip>
       </ListItem>
     );
   });
