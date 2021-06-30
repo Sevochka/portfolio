@@ -74,7 +74,18 @@ const projects: ProjectData[] = [
         text: 'Редактирование, добавление и удаления участников в группах.',
       },
     ],
-    links: [{ title: 'mpu-cloud.ru', link: 'http://mpu-cloud.ru/' }],
+    links: [
+      { title: 'Сайт [mpu-cloud.ru]', link: 'http://mpu-cloud.ru/' },
+      {
+        title: 'Демонстрация работы [Youtube]',
+        link: 'https://youtu.be/o3g3lGKI818',
+      },
+      {
+        title: 'Документация для ВКР [GDrive]',
+        link:
+          'https://drive.google.com/drive/folders/11GUf7h33s0qCgsVG5AB_8NOOEFsHzkpP?usp=sharing',
+      },
+    ],
     images: [
       {
         original: GroupPage,
