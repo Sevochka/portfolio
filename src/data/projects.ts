@@ -12,6 +12,18 @@ import {
   HideView,
   MainView,
 } from 'assets/projects/three-ietm';
+
+import {
+  CountryPage,
+  CountryPageRadial,
+  CountryPageTimeline,
+  CountryStat,
+  MainPage,
+  MainPageDiagram,
+  MainPageMap,
+  InfoPage,
+} from 'assets/projects/coronavirus-monitor';
+
 const projects: ProjectData[] = [
   {
     id: 1,
@@ -85,6 +97,11 @@ const projects: ProjectData[] = [
         link:
           'https://drive.google.com/drive/folders/11GUf7h33s0qCgsVG5AB_8NOOEFsHzkpP?usp=sharing',
       },
+      {
+        title: 'Достижения работы [GDrive]',
+        link:
+          'https://drive.google.com/drive/folders/1hNGDTu1cXmW51leqihV7EUq0PGQOtVeQ?usp=sharing',
+      },
     ],
     images: [
       {
@@ -108,13 +125,20 @@ const projects: ProjectData[] = [
   {
     id: 2,
     title: 'Three-IETM',
-    description: `Интерактивное электронное техническое руководство (ИЭТР) для двухступенчатого редуктора.`,
+    description: `Интерактивное электронное техническое руководство (ИЭТР) для двухступенчатого редуктора. 
+    Создано соместно со Михаилом в рамках помощи для его ВКР. В мои обязанности входила разработка всего
+    клиенсткого приложения, в его – моделирования моделей и анимаций в Blender.`,
     stack: ['React', 'TypeScript', 'ThreeJS', 'AntDesign', 'Mobx'],
     features: [
       {
-        tooltipText: `Переключить информацию справочного материала можно через меню в левой части экрана или 
-        при выделении конкретной детали в окне вьювера. Справочная информация отобразится в правой части экрана.`,
-        text: `Просмотр справочного материала по эксплуатации, ремонту и по отдельной детали.`,
+        tooltipText: `Переключить информацию справочного материала можно через меню в левой части экрана. 
+        Справочная информация отобразится в правой части экрана.`,
+        text: `Просмотр справочного материала по эксплуатации и ремонту.`,
+      },
+      {
+        tooltipText: `При выделении конкретной детали в окне вьювера справочная информация отобразится 
+        в правой части экрана.`,
+        text: `Просмотр справочного материала по отдельной детали.`,
       },
       {
         tooltipText: `Взаимодействие с моделью включают в себя такие инструменты, как скрытия, отображение и 
@@ -126,7 +150,11 @@ const projects: ProjectData[] = [
         text: `Запуск интерактивные анимации, демонстрирующие использование изделия, ремонт и др.`,
       },
     ],
-    links: [{ title: 'Github', link: 'https://github.com' }],
+    links: [
+      { title: 'Исходный код [Github]', link: 'https://github.com' },
+      { title: 'Демонстрация работы [Youtube]', link: 'https://github.com' },
+      { title: 'Документация для ВКР [GDrive]', link: 'https://github.com' },
+    ],
     images: [
       {
         original: AnimationDisView,
@@ -149,19 +177,84 @@ const projects: ProjectData[] = [
   {
     id: 3,
     title: 'Coronavirus Monitor',
-    description: 'Мониторинг заболевших коронавирусом.',
+    description: `Мониторинг заболевших коронавирусом, работающий с использованием Covid19 API. 
+      Проект был придуман и создан в рамках обучения по программе KTS Studio, в дальнейшем так же был 
+      выбран для составления проектной документации в рамках дисциплины "Проектное управление в ИТ".`,
     stack: ['React', 'TypeScript', 'Webpack', 'AntD', 'Highcharts', 'Mobx'],
     features: [
       {
-        tooltipText: 'Петь песни',
-        text: 'Петь песни',
+        tooltipText: `Общая статистика включает в себя такие данные, как общее количество заболевших, 
+        выздоровевших и умерших, а так же новые заболевшие, выздоровшие и умершие сегодня`,
+        text: 'Просмотр общей статистики на главной странице приложения.',
+      },
+      {
+        tooltipText: `При выделении какого-либо элемента статистики из общей статистики, мы изменим параметр 
+        отображения рейтинга.`,
+        text: 'Просмотр рейтинга стран по параметрам.',
+      },
+      {
+        tooltipText: `При выделении страны пользовватель получит данные о ней.`,
+        text: 'Взаимодействие с интерактивной общемировой картой.',
+      },
+      {
+        tooltipText: `Таблица разбита на страницы для удобной навигации и работы с данными. Так же, 
+        каждый столбец поддерживает сортировку значений.`,
+        text: 'Интерактивная таблица стран.',
+      },
+      {
+        tooltipText: `При выборе страны в таблице открывается страница страны.`,
+        text:
+          'Страница страны с основной информацией, таймлайном и диаграммой соотношения.',
+      },
+      {
+        tooltipText: `Вся информация взята из открытый медицинский источников.`,
+        text: 'Просмотр рекомендаций и методом борьбы с COVID-19.',
       },
     ],
-    links: [{ title: 'Github', link: 'https://github.com' }],
+    links: [
+      { title: 'Исходный код [Github]', link: 'https://github.com' },
+      {
+        title: 'Проектная документация [GDrive]',
+        link:
+          'https://drive.google.com/drive/folders/16hJvZTdxhDT47Y6cZelfbsNsVI__tlP0?usp=sharing',
+      },
+      {
+        title: 'COVID 19 API [GetPostman]',
+        link: 'https://documenter.getpostman.com/view/10808728/SzS8rjbc',
+      },
+    ],
     images: [
       {
-        original: ViewerMain,
-        thumbnail: ViewerMain,
+        original: MainPage,
+        thumbnail: MainPage,
+      },
+      {
+        original: MainPageDiagram,
+        thumbnail: MainPageDiagram,
+      },
+      {
+        original: MainPageMap,
+        thumbnail: MainPageMap,
+      },
+      {
+        original: CountryStat,
+        thumbnail: CountryStat,
+      },
+      {
+        original: CountryPage,
+        thumbnail: CountryPage,
+      },
+      {
+        original: CountryPageRadial,
+        thumbnail: CountryPageRadial,
+      },
+      {
+        original: CountryPageTimeline,
+        thumbnail: CountryPageTimeline,
+      },
+      {
+        original: InfoPage,
+        thumbnail: InfoPage,
       },
     ],
   },
