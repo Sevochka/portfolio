@@ -27,16 +27,15 @@ type GitHubClient = {
   created_at: Date;
   updated_at: Date;
 };
-
-type Links = {
+type ProjLink = {
   title: string;
   link: string;
 };
-type Features = {
+type ProjFeature = {
   text: string;
   tooltipText: string;
 };
-type Image = {
+type ProjImage = {
   original: string;
   thumbnail: string;
 };
@@ -45,9 +44,9 @@ type ProjectData = {
   title: string;
   description: string;
   stack: string[];
-  features: Features[];
-  links: Links[];
-  images: Image[];
+  features: ProjFeature[];
+  links: ProjLink[];
+  images: ProjImage[];
 };
 
-export type { GitHubClient, ProjectData, Links, Features, Image };
+export type { GitHubClient, ProjectData, ProjLink, ProjFeature, ProjImage };

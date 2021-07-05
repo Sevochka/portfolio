@@ -16,7 +16,7 @@ import KeyboardTabOutlinedIcon from '@material-ui/icons/ForwardOutlined';
 import ImageGallery from 'react-image-gallery';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import grey from '@material-ui/core/colors/grey';
-import { Features, Image, Links } from 'types';
+import { ProjFeature, ProjImage, ProjLink } from 'types';
 import { red } from '@material-ui/core/colors';
 import { CustomizedToolTip } from 'components/shared/CustomTooltip';
 const useStyles = makeStyles(() =>
@@ -64,9 +64,9 @@ const useStyles = makeStyles(() =>
 type Props = {
   description: string;
   stack: string[];
-  features: Features[];
-  links: Links[];
-  images: Image[];
+  features: ProjFeature[];
+  links: ProjLink[];
+  images: ProjImage[];
 };
 
 const ProjectDialogContent: FC<Props> = ({
