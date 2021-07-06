@@ -4,44 +4,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import { createStyles, Grid } from '@material-ui/core';
 import { TitlePart } from 'components/shared/TitlePart';
 import StarIcon from '@material-ui/icons/StarBorderOutlined';
-import KTS from 'assets/diplomas/КТС.jpg';
-import C3DLabs from 'assets/diplomas/C3DLabs.jpg';
-import Forge from 'assets/diplomas/Forge.jpg';
-import Smithy from 'assets/diplomas/Кузница.jpg';
-import CISCO from 'assets/diplomas/СИСКО.jpg';
-import Umnik from 'assets/Умник.jpg';
-import ForgeResearch from 'assets/ForgeResearch.jpg';
-
-const tempData = [
-  {
-    image: Umnik,
-    title: 'Программа «УМНИК»',
-  },
-  {
-    image: ForgeResearch,
-    title: 'Forge Research',
-  },
-  {
-    image: KTS,
-    title: 'KTS Frontend-developer',
-  },
-  {
-    image: C3DLabs,
-    title: 'C3D Labs Developton',
-  },
-  {
-    image: Forge,
-    title: 'Autodesk 3D Hackathon',
-  },
-  {
-    image: Smithy,
-    title: 'MPU 3D Hackathon',
-  },
-  {
-    image: CISCO,
-    title: 'CISCO IT Essentials',
-  },
-];
+import { openDialog } from 'components/shared/DialogInfo';
+import { AchievementDialogContent } from 'components/achievements/AchievementDialogContent';
+import { achievements } from 'data/achievements';
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -62,6 +27,23 @@ type Props = {
 const Achievements: FC<Props> = ({ matchesXsToSm }) => {
   const styles = useStyles();
   const gridDirection = matchesXsToSm ? 'column' : 'row';
+  const handleDialogOpen = (achievementTitle: string) => {
+    const achievement = achievements.find((a) => {
+      return a.title === achievementTitle;
+    });
+    if (!achievement) return;
+    const { description, title, images, date, links, projectId } = achievement;
+    return openDialog(
+      title,
+      <AchievementDialogContent
+        description={description}
+        images={images}
+        projectId={projectId}
+        date={date}
+        links={links}
+      />
+    );
+  };
   return (
     <>
       <TitlePart title="Achievements" IconComponent={StarIcon} />
@@ -71,11 +53,20 @@ const Achievements: FC<Props> = ({ matchesXsToSm }) => {
         direction={gridDirection}
         alignItems="flex-start"
       >
-        {tempData.map((el) => (
-          <Grid item key={el.title} className={styles.gridItem}>
-            <AchievementItem image={el.image} title={el.title} />
-          </Grid>
-        ))}
+        {achievements.map((el) => {
+          const image = el.thumbnailImage
+            ? el.thumbnailImage
+            : el.images[0].original;
+          return (
+            <Grid item key={el.title} className={styles.gridItem}>
+              <AchievementItem
+                image={image}
+                title={el.title}
+                onItemClick={handleDialogOpen}
+              />
+            </Grid>
+          );
+        })}
       </Grid>
     </>
   );

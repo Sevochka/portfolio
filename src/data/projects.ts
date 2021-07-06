@@ -279,4 +279,8 @@ const projects: ProjectData[] = [
   },
 ];
 
-export { projects };
+const getProjectById = (id: number): ProjectData | undefined => {
+  return projects.find((p) => p.id === id);
+};
+
+export { projects, getProjectById };

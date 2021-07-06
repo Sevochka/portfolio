@@ -48,14 +48,15 @@ const useStyles = makeStyles({
 type Props = {
   image: string;
   title: string;
+  onItemClick: (title: string) => void;
 };
 
-const AchievementItem: FC<Props> = ({ image, title }) => {
+const AchievementItem: FC<Props> = ({ image, title, onItemClick }) => {
   const classes = useStyles();
   return (
     <>
       <FiCard className={classes.card}>
-        <FiCardActionArea>
+        <FiCardActionArea onClick={() => onItemClick(title)}>
           <FiCardMedia className={classes.media} image={image} />
           <FiCardContent className={classes.fiCardContent}>
             <Typography

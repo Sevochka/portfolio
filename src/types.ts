@@ -48,5 +48,20 @@ type ProjectData = {
   links: ProjLink[];
   images: ProjImage[];
 };
-
-export type { GitHubClient, ProjectData, ProjLink, ProjFeature, ProjImage };
+type AchievementData = {
+  title: string;
+  description: string;
+  images?: ProjImage[];
+  links?: ProjLink[];
+  thumbnailImage?: string;
+  date: Date;
+  projectId?: number;
+};
+export type {
+  GitHubClient,
+  ProjectData,
+  ProjLink,
+  ProjFeature,
+  ProjImage,
+  AchievementData,
+};
