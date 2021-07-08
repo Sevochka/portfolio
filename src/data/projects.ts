@@ -24,6 +24,17 @@ import {
   InfoPage,
 } from 'assets/projects/coronavirus-monitor';
 
+import {
+  AddCoursePage,
+  CartPage,
+  EditCourse,
+  CoursesPage,
+  ProfilePage,
+  OrdersPage,
+  SignInPage,
+  SignUpPage,
+} from 'assets/projects/corona-courses';
+
 const projects: ProjectData[] = [
   {
     id: 1,
@@ -261,19 +272,84 @@ const projects: ProjectData[] = [
   {
     id: 4,
     title: 'Online Shop',
-    description: 'Торговая площадка курсов.',
-    stack: ['NodeJS', 'JavaScript', 'Express'],
+    description: `Торговая площадка курсов, предназначеная для пользователей, 
+    желающих усовершенствовать свои знания в IT сфере путем покупки курсов,
+    а также для разработчиков курсов, предоставляя им торговую площадку для продажи. 
+    Чтобы воспользоваться приложением пользователь должен иметь выход в интернет.`,
+    stack: ['NodeJS', 'JavaScript', 'Express', 'MongoDB'],
     features: [
       {
-        tooltipText: 'Петь песни',
-        text: 'Петь песни',
+        tooltipText: `Пользователь регистрируется при оформлении или создании нового заказа.`,
+        text: `Регистрация пользователей.`,
+      },
+      {
+        tooltipText: `Витрина интернет-магазина располагается на Интернет-сервере и выступает в качестве веб-сайта 
+        с динамическим содержанием. Основа витрины интернет-магазина - это каталог с товарами с указанием цен.`,
+        text: `Предоставление доступа к базе продаваемых товаров (в виде каталога, прайс-листа).`,
+      },
+      {
+        tooltipText: `Выбрав товар, пользователь помещает его в «корзину». «Корзина» представляет собой электронное 
+        представление реальной корзины, то есть список продуктов, который оплачивается одновременно.`,
+        text: `Взаимодействие с электронной «тележкой» покупателя.`,
+      },
+      {
+        tooltipText: `Любой зарегистрированный пользователь может создать и выложить в список товаров свой собственный 
+        курс. При создании курса запрашивается краткая информация о курсе: название, цена и аватар курса.`,
+        text: `Возможность выставление собственных курсов.`,
+      },
+      {
+        tooltipText: `Пользователь, выложивший один или более курсов, имеет возможность отредактировать их. 
+        Для этого на главное страницы курса предусмотрены дополнительные элементы управления на последних.`,
+        text: `Редактирование собственных курсов.`,
+      },
+      {
+        tooltipText: `Редактирование должно предусматривать методы защита. 
+        Пользователь не может редактировать чужие курсы.`,
+        text: `Защита курсов от несанкционированного редактирования.`,
       },
     ],
-    links: [{ title: 'Github', link: 'https://github.com' }],
+    links: [
+      {
+        title: 'Исходный код [Github]',
+        link: 'https://github.com/Sevochka/online-shop-node-js',
+      },
+      {
+        title: 'Демонстрация работы [Youtube]',
+        link: 'https://www.youtube.com/watch?v=z4JLwmDIwEU',
+      },
+    ],
     images: [
       {
-        original: ViewerMain,
-        thumbnail: ViewerMain,
+        original: AddCoursePage,
+        thumbnail: AddCoursePage,
+      },
+      {
+        original: CartPage,
+        thumbnail: CartPage,
+      },
+      {
+        original: CoursesPage,
+        thumbnail: CoursesPage,
+      },
+      {
+        original: EditCourse,
+        thumbnail: EditCourse,
+      },
+      {
+        original: ProfilePage,
+        thumbnail: ProfilePage,
+      },
+      {
+        original: OrdersPage,
+        thumbnail: OrdersPage,
+      },
+      {
+        original: SignInPage,
+        thumbnail: SignInPage,
+      },
+      {
+        original: SignUpPage,
+        thumbnail: SignUpPage,
       },
     ],
   },
