@@ -7,6 +7,8 @@ import C3DLabs from 'assets/diplomas/C3DLabs.jpg';
 import Forge from 'assets/diplomas/Forge.jpg';
 import Smithy from 'assets/diplomas/Кузница.jpg';
 import CISCO from 'assets/diplomas/СИСКО.jpg';
+import CCNA from 'assets/diplomas/CCNA.jpg';
+import CCNA_Diploma from 'assets/diplomas/CCNA Dimploma.png';
 
 const achievements: AchievementData[] = [
   {
@@ -89,19 +91,66 @@ const achievements: AchievementData[] = [
   {
     images: [{ original: Forge, thumbnail: Forge }],
     title: 'Autodesk 3D Hackathon',
-    description: '',
+    description: `3D хакатон – это мероприятие, главной целью которого является создание прототипа веб-сервиса, 
+    использующего в своей работе технологии 3D визуализации. В рамках данного конкурса отмечались лучшие проекты, 
+    созданные на базе облачной платформы Autodesk Forge. 
+    За время хакатона было разработано веб-приложение сборщик параметрического стола.`,
+    links: [
+      {
+        title: 'Новость на форуме Autodesk',
+        link:
+          'https://forums.autodesk.com/t5/forge-api-i-programmirovanie/3d-hakaton-6-8-aprelya-2018goda/td-p/7865443',
+      },
+      {
+        title: 'Фотоотчет с мероприятия [Facebook]',
+        link:
+          'https://www.facebook.com/pg/adskcommunity/photos/?tab=album&album_id=1619210788114342',
+      },
+    ],
     date: new Date(2018, 3, 8),
   },
   {
     images: [{ original: Smithy, thumbnail: Smithy }],
     title: 'MPU 3D Hackathon',
-    description: '',
-    date: new Date(2019, 11, 3),
+    description: `В Московском Политехе прошёл хакатон по разработке ПО на базе платформы Autodesk Forge "кузница 3D решений".
+    Участники должны были разработать оригинальное приложение, 
+    использующее технологии платформы Autodesk Forge и решающее практическую задачу. 
+    Оценивались эффективность использования функциональных возможностей платформы, 
+    детальность проработки элементов проекта, наличие и качество визуализации и оригинальность концепции.`,
+    date: new Date(2019, 10, 23),
   },
   {
     images: [{ original: CISCO, thumbnail: CISCO }],
     title: 'CISCO IT Essentials',
-    description: '',
+    description: `Базовый курс Cisco о настройки системы Windows/Linux, сборки и разборки компьютера, работе с 
+    беспроводными сетями и обеспечение их безопасности. Курс расчитан на 70 часов обучения.`,
+    links: [
+      { title: 'CISCO Networking Academy', link: `https://www.netacad.com` },
+      {
+        title: 'IT Essentials Course',
+        link: `https://www.netacad.com/courses/os-it/it-essentials`,
+      },
+    ],
+    date: new Date(2018, 11, 3),
+  },
+  {
+    images: [
+      { original: CCNA, thumbnail: CCNA },
+      { original: CCNA_Diploma, thumbnail: CCNA_Diploma },
+    ],
+    title: 'Cisco Certified Network Associate',
+    description: `Сертификат CCNA (Cisco Certified Network Associate) 
+    свидетельствует о базовых знаниях в области вычислительных сетей. 
+    Специалисты с квалификацией CCNA способны установить, настроить 
+    и эксплуатировать службы локальных, распределенных сетей, а также службы доступа по телефонным 
+    линиям для сетей малого масштаба (до 100 узлов). Курс расчитан на 70 часов обучения.`,
+    links: [
+      { title: 'CISCO Networking Academy', link: `https://www.netacad.com` },
+      {
+        title: 'CCNA Course',
+        link: `https://www.netacad.com/courses/networking/ccna-switching-routing-wireless-essentials`,
+      },
+    ],
     date: new Date(2018, 11, 3),
   },
 ];
