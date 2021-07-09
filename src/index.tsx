@@ -6,10 +6,13 @@ import { useCustomTheme } from 'hooks/useCustomTheme';
 
 const Root: FC = () => {
   const [theme, toggleDarkTheme] = useCustomTheme();
-
+  const darkThemeActive = theme.palette.type === 'dark';
   return (
     <MuiThemeProvider theme={theme}>
-      <App toggleDarkTheme={toggleDarkTheme} />
+      <App
+        toggleDarkTheme={toggleDarkTheme}
+        darkThemeActive={darkThemeActive}
+      />
     </MuiThemeProvider>
   );
 };

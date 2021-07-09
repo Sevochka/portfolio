@@ -3,17 +3,20 @@ import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Grid, { GridSize } from '@material-ui/core/Grid';
 import { Profile } from 'components/profile/Profile';
 import {
-  Button,
   Container,
   CssBaseline,
+  IconButton,
   useMediaQuery,
 } from '@material-ui/core';
 import { Projects } from 'components/projects/Projects';
 import { Skills } from 'components/skills/Skills';
 import { Achievements } from 'components/achievements/Achievements';
+import DarkThemeIcon from '@material-ui/icons/Brightness4';
+import LightThemeIcon from '@material-ui/icons/BrightnessHigh';
 
 type Props = {
   toggleDarkTheme(): void;
+  darkThemeActive: boolean;
 };
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -29,10 +32,15 @@ const useStyles = makeStyles((theme: Theme) =>
     marginTopSkills: {
       marginTop: theme.spacing(2),
     },
+    themeBtn: {
+      position: 'absolute',
+      right: theme.spacing(2),
+      zIndex: 100,
+    },
   })
 );
 
-const App: FC<Props> = ({ toggleDarkTheme }) => {
+const App: FC<Props> = ({ toggleDarkTheme, darkThemeActive }) => {
   const classes = useStyles();
 
   const matchesXsToSm = useMediaQuery((theme: Theme) =>
@@ -47,13 +55,18 @@ const App: FC<Props> = ({ toggleDarkTheme }) => {
     <>
       <CssBaseline />
       <Container maxWidth={'lg'} className={classes.container}>
+        <IconButton
+          className={classes.themeBtn}
+          color="default"
+          aria-label="Изменить тему"
+          onClick={toggleDarkTheme}
+        >
+          {darkThemeActive ? <DarkThemeIcon /> : <LightThemeIcon />}
+        </IconButton>
         <Grid container spacing={3} direction={gridDirection}>
           <Grid item xs={gridSizeProfile}>
             <div className={classes.profileSticky}>
               <Profile matchesXsToSm={matchesXsToSm} />
-              <Button color="primary" onClick={toggleDarkTheme}>
-                Toggle theme
-              </Button>
             </div>
           </Grid>
           <Grid item xs={gridSizeMain}>

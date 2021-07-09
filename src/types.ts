@@ -57,6 +57,11 @@ type AchievementData = {
   date: Date;
   projectId?: number;
 };
+type SkillData = {
+  icon: string;
+  cardContentText: string;
+  link: string;
+};
 export type {
   GitHubClient,
   ProjectData,
@@ -64,4 +69,5 @@ export type {
   ProjFeature,
   ProjImage,
   AchievementData,
+  SkillData,
 };
