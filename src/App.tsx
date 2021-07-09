@@ -69,7 +69,7 @@ const App: FC<Props> = ({ toggleDarkTheme, darkThemeActive }) => {
           aria-label="Изменить тему"
           onClick={toggleDarkTheme}
         >
-          {darkThemeActive ? <DarkThemeIcon /> : <LightThemeIcon />}
+          {darkThemeActive ? <LightThemeIcon /> : <DarkThemeIcon />}
         </IconButton>
         <Grid container spacing={3} direction={gridDirection}>
           <Grid item xs={gridSizeProfile}>
