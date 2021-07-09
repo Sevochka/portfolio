@@ -2,12 +2,15 @@
   "name": "portfolio",
   "version": "1.0.0",
   "main": "index.js",
+  "homepage": "https://sevochka.github.io/portfolio",
   "author": "Vsevolod <sevkaplay@gmail.com>",
   "scripts": {
     "start": "webpack serve --config webpack/webpack.common.js --mode development --env env=dev --open",
     "build": "webpack --config webpack/webpack.common.js --mode production --env env=prod",
     "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\"",
-    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
+    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build"
   },
   "license": "MIT",
   "dependencies": {
@@ -42,6 +45,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "gh-pages": "^3.2.3",
     "html-webpack-plugin": "^5.3.1",
     "husky": "4",
     "lint-staged": "^10.5.4",
