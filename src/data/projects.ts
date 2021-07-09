@@ -1,9 +1,15 @@
 import { ProjectData } from 'types';
 import {
-  GroupPage,
   FilesCardView,
-  ViewerCatalog,
+  GroupPage,
   ViewerMain,
+  ViewerCatalog,
+  AddUser,
+  FilesListView,
+  ImageViewer,
+  PdfViewer,
+  GroupUsers,
+  MainCloudPage,
 } from 'assets/projects/mpu-cloud';
 
 import {
@@ -34,6 +40,29 @@ import {
   SignInPage,
   SignUpPage,
 } from 'assets/projects/corona-courses';
+
+import {
+  AddEmployee,
+  AddEmployee2,
+  AddEmployee4,
+  AddEmployee3,
+  EmployeesPage,
+  MainPage as StaffMainPage,
+  ArchivePage,
+  DocumentPage,
+  OptionsPage,
+  ReportDocument,
+  OrganizationPage,
+  SuccessAuthorization,
+} from 'assets/projects/staff-app';
+
+import {
+  Bet,
+  MainRoulette,
+  Settings,
+  Spinning,
+  Theme,
+} from 'assets/projects/roulette';
 
 const projects: ProjectData[] = [
   {
@@ -116,6 +145,10 @@ const projects: ProjectData[] = [
     ],
     images: [
       {
+        original: MainCloudPage,
+        thumbnail: MainCloudPage,
+      },
+      {
         original: GroupPage,
         thumbnail: GroupPage,
       },
@@ -130,6 +163,26 @@ const projects: ProjectData[] = [
       {
         original: ViewerMain,
         thumbnail: ViewerMain,
+      },
+      {
+        original: AddUser,
+        thumbnail: AddUser,
+      },
+      {
+        original: FilesListView,
+        thumbnail: FilesListView,
+      },
+      {
+        original: ImageViewer,
+        thumbnail: ImageViewer,
+      },
+      {
+        original: PdfViewer,
+        thumbnail: PdfViewer,
+      },
+      {
+        original: GroupUsers,
+        thumbnail: GroupUsers,
       },
     ],
   },
@@ -350,6 +403,170 @@ const projects: ProjectData[] = [
       {
         original: SignUpPage,
         thumbnail: SignUpPage,
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: 'Roulette',
+    description: `Приложение для игры в рулетку было создано в рамках дисциплины «Мобильная разработка».
+    По ссылке с исходным кодом приложения так же можно найти лабораторные работы и другие проекты.`,
+    stack: ['RadStudio', 'C++ Builder'],
+    features: [
+      {
+        tooltipText: `Начальный баланс для игры 500 фишек. Пользователь может выбрать из предложенного количества 
+        ставки или ввести свое число.`,
+        text: `Вращения рулетки со ставками.`,
+      },
+      {
+        tooltipText: `Предусмотрена возможность переключать темную и светлую тему.`,
+        text: `Смена темы отображения.`,
+      },
+      {
+        tooltipText: `С помощью ползунков можно настроить как вероятноть выпадения красного и черного, так 
+        и черного&красного и zero.`,
+        text: `Настройка вероятности выпадения.`,
+      },
+    ],
+    links: [
+      {
+        title: 'Исходный код [Github]',
+        link: 'https://github.com/Sevochka/radStudio/tree/master/Roulette',
+      },
+    ],
+    images: [
+      {
+        original: Bet,
+        thumbnail: Bet,
+      },
+      {
+        original: MainRoulette,
+        thumbnail: MainRoulette,
+      },
+      {
+        original: Settings,
+        thumbnail: Settings,
+      },
+      {
+        original: Spinning,
+        thumbnail: Spinning,
+      },
+      {
+        original: Theme,
+        thumbnail: Theme,
+      },
+    ],
+  },
+  {
+    id: 6,
+    title: 'ИС-Кадры',
+    description: `Информационная система «ИС-Кадры» предназначена для 
+    возможности ведение и взаимодействие с единой базой данных сотрудников предприятия. 
+    Продукт позволяет создавать, редактировать, удалять и просматривать карточки сотрудников, 
+    должностей и отделов, а также генерировать и сохранять такие документы, 
+    как согласие на обработку персональных данных, анкета нового сотрудника, 
+    трудовой договор, заявление об увольнении, заявление о приеме на работу 
+    и отчет о всех сотрудниках предприятия. `,
+    stack: ['C#', 'phpMyAdmin', 'mySQL'],
+    features: [
+      {
+        tooltipText: `Каждый отдел содержит данные о названии и телефоне этого отдела. 
+        У отдела есть множество должностей. (связь 1-много)`,
+        text: `Добавление, изменение и удаление отдела.`,
+      },
+      {
+        tooltipText: `При добавлении, изменении и увольнении сотрудника генерируются должностые документы 
+        в Microsoft Word, такие как персональных данных, анкета нового сотрудника, трудовой договор,
+        заявление об увольнении, заявление о приеме на работу. При внесении сотрудника оператору необходимо указать 
+        его личные и паспортные данные.`,
+        text: `Добавление, изменение и увольнение сотрудника.`,
+      },
+      {
+        tooltipText: `В ИС-Кадры предусмотрено 3 вида прав доступа: 
+        ADMIN (полный доступ ко всей функциональности ИС),
+        USER+ (доступ ко всей функциональности ИС, кроме добавления, удаления без генерации должностых 
+        документов и без доступа ко вкладке "Настройки ИС"),
+        USER (доступ к базовой функциональности с возможностью генерации нескольких должностных документов)`,
+        text: `Настройка прав пользования ИС.`,
+      },
+      {
+        tooltipText: `Приложение содержит таблицу сотрудников, должностей и отделов с возможностью фильтрации и поиска.`,
+        text: `Получение полного списка сотрудников, должностей и отделов на предприятии.`,
+      },
+      {
+        tooltipText: `Для генерации должностных документов на компьютере пользователя необходио наличие ПО Microsoft Word`,
+        text: `Генерация таких документов, как согласие на обработку персональных данных, анкета нового сотрудника, 
+        трудовой договор, заявление об увольнении, заявление о приеме на работу и отчет о всех сотрудниках предприятия.`,
+      },
+    ],
+    links: [
+      {
+        title: 'Исходный код [Github]',
+        link: 'https://github.com/Sevochka/staff-app',
+      },
+      {
+        title: 'Демонстрация работы [Youtube]',
+        link: 'https://www.youtube.com/watch?v=1tKPhCgPJ8k',
+      },
+      {
+        title: 'Документация [GDrive]',
+        link:
+          'https://drive.google.com/drive/folders/1epodfH_HazcmQNySruAWHKQ7Nd6SI9KE?usp=sharing',
+      },
+      {
+        title: 'Лабораторные работы [GDrive]',
+        link:
+          'https://drive.google.com/drive/folders/15kIyCOGmOcLmSgOHvM8FBH5bTgxenq3r?usp=sharing',
+      },
+    ],
+    images: [
+      {
+        original: SuccessAuthorization,
+        thumbnail: SuccessAuthorization,
+      },
+      {
+        original: StaffMainPage,
+        thumbnail: StaffMainPage,
+      },
+      {
+        original: EmployeesPage,
+        thumbnail: EmployeesPage,
+      },
+      {
+        original: ArchivePage,
+        thumbnail: ArchivePage,
+      },
+      {
+        original: DocumentPage,
+        thumbnail: DocumentPage,
+      },
+      {
+        original: OptionsPage,
+        thumbnail: OptionsPage,
+      },
+      {
+        original: ReportDocument,
+        thumbnail: ReportDocument,
+      },
+      {
+        original: OrganizationPage,
+        thumbnail: OrganizationPage,
+      },
+      {
+        original: AddEmployee,
+        thumbnail: AddEmployee,
+      },
+      {
+        original: AddEmployee2,
+        thumbnail: AddEmployee2,
+      },
+      {
+        original: AddEmployee3,
+        thumbnail: AddEmployee3,
+      },
+      {
+        original: AddEmployee4,
+        thumbnail: AddEmployee4,
       },
     ],
   },
