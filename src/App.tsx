@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
       marginTop: theme.spacing(3),
+      position: 'relative',
     },
     profileSticky: {
       position: 'sticky',
@@ -34,8 +35,13 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     themeBtn: {
       position: 'absolute',
-      right: theme.spacing(2),
       zIndex: 100,
+    },
+    themeBtnRight: {
+      right: theme.spacing(2),
+    },
+    themeBtnLeft: {
+      left: theme.spacing(2),
     },
   })
 );
@@ -56,7 +62,9 @@ const App: FC<Props> = ({ toggleDarkTheme, darkThemeActive }) => {
       <CssBaseline />
       <Container maxWidth={'lg'} className={classes.container}>
         <IconButton
-          className={classes.themeBtn}
+          className={`${classes.themeBtn} ${
+            matchesXsToSm ? classes.themeBtnLeft : classes.themeBtnRight
+          }`}
           color="default"
           aria-label="Изменить тему"
           onClick={toggleDarkTheme}

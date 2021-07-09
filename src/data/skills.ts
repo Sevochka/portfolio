@@ -6,17 +6,17 @@ import { SkillData } from 'types';
 const skills: SkillData[] = [
   {
     icon: ReactImage,
-    cardContentText: 'Я люблю React и использую его каждый день.',
+    cardContentText: 'I love React and use it every single day.',
     link: 'https://reactjs.org/',
   },
   {
     icon: ThreeImage,
-    cardContentText: 'У меня есть опыт в three.js и это замечательно.',
+    cardContentText: 'I have experience in three.js and its awesome.',
     link: 'https://threejs.org/',
   },
   {
     icon: NodeImage,
-    cardContentText: 'Иногда я так же использую Node JS.',
+    cardContentText: 'Sometimes I use node.js cause I can.',
     link: 'https://nodejs.org/en/',
   },
 ];

@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) =>
       cursor: 'pointer',
       borderColor: 'transparent',
       '&:hover': {
+        transform: 'scale(1.005)',
         borderColor: grey['500'],
       },
     },

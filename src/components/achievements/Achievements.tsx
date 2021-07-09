@@ -56,13 +56,16 @@ const Achievements: FC<Props> = ({ matchesXsToSm }) => {
         {achievements.map((el) => {
           const image = el.thumbnailImage
             ? el.thumbnailImage
-            : el.images[0].original;
+            : el.images
+            ? el.images[0].thumbnail
+            : undefined;
           return (
             <Grid item key={el.title} className={styles.gridItem}>
               <AchievementItem
                 image={image}
                 title={el.title}
                 onItemClick={handleDialogOpen}
+                matchesXsToSm={matchesXsToSm}
               />
             </Grid>
           );

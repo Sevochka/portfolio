@@ -64,7 +64,7 @@ const useStyles = makeStyles(() =>
 type Props = {
   description: string;
   links?: ProjLink[];
-  images: ProjImage[];
+  images?: ProjImage[];
   date: Date;
   projectId?: number;
 };

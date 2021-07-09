@@ -20,10 +20,16 @@ const useStyles = makeStyles({
     minHeight: 150,
     border: '1px solid transparent',
     '&:hover': {
+      transform: 'scale(1.005)',
       borderColor: grey['500'],
       '& .MuiCardContent-root': {
         top: '20px',
       },
+    },
+  },
+  cardMobilePosition: {
+    '& .MuiCardContent-root': {
+      top: 0,
     },
   },
   media: {
@@ -46,16 +52,27 @@ const useStyles = makeStyles({
 });
 
 type Props = {
-  image: string;
+  image?: string;
   title: string;
   onItemClick: (title: string) => void;
+  matchesXsToSm: boolean;
 };
 
-const AchievementItem: FC<Props> = ({ image, title, onItemClick }) => {
+const AchievementItem: FC<Props> = ({
+  image,
+  title,
+  onItemClick,
+  matchesXsToSm,
+}) => {
   const classes = useStyles();
+  if (!image) return null;
   return (
     <>
-      <FiCard className={classes.card}>
+      <FiCard
+        className={`${classes.card} ${
+          matchesXsToSm ? classes.cardMobilePosition : ''
+        }`}
+      >
         <FiCardActionArea onClick={() => onItemClick(title)}>
           <FiCardMedia className={classes.media} image={image} />
           <FiCardContent className={classes.fiCardContent}>
