@@ -20,7 +20,6 @@ const useStyles = makeStyles({
     minHeight: 150,
     border: '1px solid transparent',
     '&:hover': {
-      transform: 'scale(1.005)',
       borderColor: grey['500'],
       '& .MuiCardContent-root': {
         top: '20px',

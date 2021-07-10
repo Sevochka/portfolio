@@ -190,7 +190,7 @@ const projects: ProjectData[] = [
     id: 2,
     title: 'Three-IETM',
     description: `Интерактивное электронное техническое руководство (ИЭТР) для двухступенчатого редуктора. 
-    Создано соместно со Михаилом в рамках помощи для его ВКР. В мои обязанности входила разработка всего
+    Создано соместно с Михаилом в рамках помощи для его ВКР. В мои обязанности входила разработка всего
     клиенсткого приложения, в его – моделирования моделей и анимаций в Blender.`,
     stack: ['React', 'TypeScript', 'ThreeJS', 'AntDesign', 'Mobx'],
     features: [
@@ -215,9 +215,19 @@ const projects: ProjectData[] = [
       },
     ],
     links: [
-      { title: 'Исходный код [Github]', link: 'https://github.com' },
-      { title: 'Демонстрация работы [Youtube]', link: 'https://github.com' },
-      { title: 'Документация для ВКР [GDrive]', link: 'https://github.com' },
+      {
+        title: 'Исходный код [Github]',
+        link: 'https://github.com/mishaalexeev/threejs-ietm',
+      },
+      {
+        title: 'Демонстрация работы [Youtube]',
+        link: 'https://www.youtube.com/watch?v=Be2kLswTM-Y',
+      },
+      {
+        title: 'Документация для ВКР [GDrive]',
+        link:
+          'https://drive.google.com/drive/folders/1IMA6rWZwpQEIrTo_AVb-8lR9Ul1VfYk6',
+      },
     ],
     images: [
       {

@@ -20,7 +20,6 @@ const useStyles = makeStyles({
     borderColor: 'transparent',
     textAlign: 'center',
     '&:hover': {
-      transform: 'scale(1.005)',
       borderColor: grey['500'],
     },
   },
